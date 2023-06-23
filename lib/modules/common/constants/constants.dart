@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-class Theme {
+class Constants {
     static final theme = ThemeData(
     brightness: Brightness.dark,
-    primaryColor: const Color.fromRGBO(38, 45, 61, 1),
+    primaryColor: const Color.fromRGBO(15, 23, 42, 1),
     fontFamily: 'clashDisplayRegular',
     scaffoldBackgroundColor: const Color(0xfff),
     dividerColor: ColorPalette.white,
@@ -137,7 +137,11 @@ class FontsSize {
     static const double xsmall = 10.0;
 }
 
-class AssetName {}
+class AssetName {
+}
+class ImagesName {
+  static const String mokolo ='assets/images/mokolo.png';
+}
 
 class IconsName {
   static const String back = 'assets/icons/back.svg';

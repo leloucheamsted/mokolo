@@ -86,27 +86,27 @@ flutter:
   fonts:
     - family: clashDisplayRegular
       fonts:
-        - asset: assets/fonts/ClashDisplay-Regular.otf
+        - asset: assets/fonts/ClashDisplay/ClashDisplay-Regular.otf
    
     - family: clashDisplayLight
       fonts:
-        - asset: assets/fonts/ClashDisplay-Light.otf
+        - asset: assets/fonts/ClashDisplay/ClashDisplay-Light.otf
    
     - family: clashDisplayExtraLight
       fonts:
-        - asset: assets/fonts/ClashDisplay-ExtraLight.otf
+        - asset: assets/fonts/ClashDisplay/ClashDisplay-ExtraLight.otf
   
     - family: clashDisplayMedium
       fonts:
-        - asset: assets/fonts/ClashDisplay-Medium.otf
+        - asset: assets/fonts/ClashDisplay/ClashDisplay-Medium.otf
    
     - family: clashDisplayBold
       fonts:
-        - asset: assets/fonts/ClashDisplay-Bold.otf
+        - asset: assets/fonts/ClashDisplay/ClashDisplay-Bold.otf
 
     - family: clashDisplaySemibold
       fonts:
-        - asset: assets/fonts/ClashDisplay-Semibold.otf
+        - asset: assets/fonts/ClashDisplay/ClashDisplay-Semibold.otf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro
