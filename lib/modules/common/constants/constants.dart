@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 class Constants {
     static final theme = ThemeData(
     brightness: Brightness.dark,
-    primaryColor: const Color.fromRGBO(15, 23, 42, 1),
+    primaryColor: const Color.fromRGBO(255, 255, 255, 1),
     fontFamily: 'clashDisplayRegular',
     scaffoldBackgroundColor: const Color(0xfff),
     dividerColor: ColorPalette.white,
@@ -24,7 +24,7 @@ class Constants {
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: ColorPalette.white,
         statusBarIconBrightness: Brightness.dark, //<-- For Android SEE HERE (dark icons)
-        statusBarBrightness: Brightness.dark, //<-- For iOS SEE HERE (dark icons)
+        statusBarBrightness: Brightness.light, //<-- For iOS SEE HERE (dark icons)
       ),
       toolbarTextStyle: const TextTheme(
         titleLarge: TextStyle(
@@ -141,6 +141,7 @@ class AssetName {
 }
 class ImagesName {
   static const String mokolo ='assets/images/mokolo.png';
+  static const String onboardingstep1='assets/images/onboardingstep1.png';
 }
 
 class IconsName {

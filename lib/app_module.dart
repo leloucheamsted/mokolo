@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mokolo/modules/user/presentation/onboarding/pages/onboarding.module.dart';
 import 'package:mokolo/routes/nav_observer.dart';
 import 'modules/core/core.module.dart';
 import 'modules/splash/blocs/splash_bloc.dart';
@@ -19,7 +20,7 @@ class AppModule extends Module {
   @override
   final List<ModularRoute> routes = [
     ChildRoute(AppRoute.initial.path, child: (_, __) => const SplashPage()),
-   
+           ModuleRoute(AppRoute.onboarding.path, module: OnBoardingModule()),
     WildcardRoute(child: (context, args) => const RouteNotFoundPage()),
   ];
 }

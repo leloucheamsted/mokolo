@@ -1,6 +1,7 @@
 import 'dart:async';
 // ignore: depend_on_referenced_packages
 import 'package:collection/collection.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/widgets.dart';
 import 'package:rxdart/subjects.dart';
 
@@ -31,14 +32,16 @@ class NavObserver extends RouteObserver<PageRoute> {
   }
 
   Route<dynamic>? getRouteByName(String routeName) {
-    late Route<dynamic>? foundRoute = null;
-    if (routeStack.length > 0) {
+    late Route<dynamic>? foundRoute;
+    if (routeStack.isNotEmpty) {
       try {
         foundRoute = routeStack.firstWhereOrNull(
           (el) => el.settings.name == routeName,
         );
       } catch (e) {
-        print("getRouteByName.Failed $routeName $e");
+        if (kDebugMode) {
+          print("getRouteByName.Failed $routeName $e");
+        }
         // rethrow;
       }
     }
@@ -76,7 +79,7 @@ class NavObserver extends RouteObserver<PageRoute> {
       routeStack.removeLast();
     }*/
     routeStack.remove(route);
-    _onActiveRoute(routeStack.last);
+   // _onActiveRoute(routeStack.last);
   }
 
   @override

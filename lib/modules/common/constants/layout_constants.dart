@@ -38,4 +38,5 @@ class LayoutConstants {
   // Others
   static const double actionBtnHeight=56.0;
   static const double textFieldHeight=56.0;
+  static const double appBarSize =45.0;
 }

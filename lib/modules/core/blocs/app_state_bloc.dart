@@ -1,10 +1,6 @@
 // import 'dart:developer';
 // import 'package:collection/collection.dart' show IterableExtension;
 // import 'package:flutter_modular/flutter_modular.dart';
-// import 'package:tello_social_app/modules/core/services/dialog_service.dart';
-// import 'package:tello_social_app/modules/user/domain/entities/app_user.dart';
-// import 'package:tello_social_app/modules/user/domain/usecases/session_read_phone_number.usecase.dart';
-
 // import '../../../routes/app_routes.enum.dart';
 // import '../../chat/domain/entities/group.entity.dart';
 // import '../../chat/presentation/blocs/fetch_grop_list_bloc.dart';

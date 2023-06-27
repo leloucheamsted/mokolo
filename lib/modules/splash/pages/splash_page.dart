@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
+import 'package:mokolo/routes/app_routes.enum.dart';
 
 import '../blocs/splash_bloc.dart';
 
@@ -35,13 +36,20 @@ class _SplashPageState extends State<SplashPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Material(
-        child: Center(
-          child: SizedBox(
-            height: 150,
-            // width: 50,
-            // color: AppTheme().colors.mainBackground,
-            child: Image.asset(ImagesName.mokolo),
+      backgroundColor: Colors.white,
+      body: GestureDetector(
+        onTap: (){
+          Modular.to.pushNamed(AppRoute.onboarding.path);
+        },
+        child: Material(
+          color: Colors.white,
+          child: Center(
+            child: SizedBox(
+              height: 150,
+              // width: 50,
+              // color: AppTheme().colors.mainBackground,
+              child: Image.asset(ImagesName.mokolo),
+            ),
           ),
         ),
       ),
