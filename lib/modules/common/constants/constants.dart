@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class Constants {
-    static final theme = ThemeData(
+  static final theme = ThemeData(
     brightness: Brightness.dark,
     primaryColor: const Color.fromRGBO(255, 255, 255, 1),
     fontFamily: 'clashDisplayRegular',
@@ -23,8 +23,10 @@ class Constants {
       backgroundColor: ColorPalette.white,
       systemOverlayStyle: const SystemUiOverlayStyle(
         statusBarColor: ColorPalette.white,
-        statusBarIconBrightness: Brightness.dark, //<-- For Android SEE HERE (dark icons)
-        statusBarBrightness: Brightness.light, //<-- For iOS SEE HERE (dark icons)
+        statusBarIconBrightness:
+            Brightness.dark, //<-- For Android SEE HERE (dark icons)
+        statusBarBrightness:
+            Brightness.light, //<-- For iOS SEE HERE (dark icons)
       ),
       toolbarTextStyle: const TextTheme(
         titleLarge: TextStyle(
@@ -43,13 +45,16 @@ class Constants {
     ),
     textSelectionTheme: const TextSelectionThemeData(
       cursorColor: Colors.white,
-    ), colorScheme: ColorScheme.fromSwatch().copyWith(
-      primary: ColorPalette.primaryBase,
-      secondary: ColorPalette.secondaryBase,
-      brightness: Brightness.dark,
-      surface: ColorPalette.mokoloBgColor,
-      onSurface: Colors.grey.shade300,
-    ).copyWith(background: const Color.fromRGBO(255, 255, 255, 1)),
+    ),
+    colorScheme: ColorScheme.fromSwatch()
+        .copyWith(
+          primary: ColorPalette.primaryBase,
+          secondary: ColorPalette.secondaryBase,
+          brightness: Brightness.dark,
+          surface: ColorPalette.mokoloBgColor,
+          onSurface: Colors.grey.shade300,
+        )
+        .copyWith(background: const Color.fromRGBO(255, 255, 255, 1)),
   )
     ..textTheme.apply(
       bodyColor: ColorPalette.greyScale900,
@@ -67,12 +72,11 @@ class Constants {
 class ColorPalette {
   static const Color mokoloBgColor = Color(0xfff);
   static const Color primaryBase = Color.fromRGBO(15, 23, 42, 1);
-    static const Color primary400 = Color.fromRGBO(42, 54, 70, 1);
-    static const Color primary300 = Color.fromRGBO(71, 85, 105, 1);
-    static const Color primary200 = Color.fromRGBO(100, 116, 139, 1);
-    static const Color primary100 = Color.fromRGBO(203, 213, 225, 1);
-    static const Color primary50 = Color.fromRGBO(241, 245, 249, 1);
-
+  static const Color primary400 = Color.fromRGBO(42, 54, 70, 1);
+  static const Color primary300 = Color.fromRGBO(71, 85, 105, 1);
+  static const Color primary200 = Color.fromRGBO(100, 116, 139, 1);
+  static const Color primary100 = Color.fromRGBO(203, 213, 225, 1);
+  static const Color primary50 = Color.fromRGBO(241, 245, 249, 1);
 
   static const Color secondaryBase = Color.fromRGBO(255, 159, 41, 1);
   static const Color secondary400 = Color.fromRGBO(255, 178, 84, 1);
@@ -104,12 +108,11 @@ class ColorPalette {
   static const Color greyScale100 = Color.fromRGBO(241, 245, 249, 1);
   static const Color greyScale50 = Color.fromRGBO(248, 250, 252, 1);
 
-
   static const Color white = Color.fromRGBO(255, 255, 255, 1);
 }
 
 class Config {
-    static const String version = 'V1.0.0-1';
+  static const String version = 'V1.0.0-1';
 }
 
 class Fonts {
@@ -119,29 +122,30 @@ class Fonts {
   static const String bold = 'clashDisplayBold';
   static const String light = 'clashDisplayLight';
   static const String extralight = 'clashDisplayExtraLight';
-
 }
 
 class FontsSize {
-    static const double head1 = 48.0;
-    static const double head2 = 40.0;
-    static const double head3 = 32.0;
-    static const double head4 = 24.0;
-    static const double head5 = 20.0;
-    static const double head6 = 18.0;
+  static const double head1 = 48.0;
+  static const double head2 = 40.0;
+  static const double head3 = 32.0;
+  static const double head4 = 24.0;
+  static const double head5 = 20.0;
+  static const double head6 = 18.0;
 
-    static const double xlarge = 18.0;
-    static const double large = 16.0;
-    static const double medium = 14.0;
-    static const double small = 12.0;
-    static const double xsmall = 10.0;
+  static const double xlarge = 18.0;
+  static const double large = 16.0;
+  static const double medium = 14.0;
+  static const double small = 12.0;
+  static const double xsmall = 10.0;
 }
 
-class AssetName {
-}
+class AssetName {}
+
 class ImagesName {
-  static const String mokolo ='assets/images/mokolo.png';
-  static const String onboardingstep1='assets/images/onboardingstep1.png';
+  static const String mokolo = 'assets/images/mokolo.png';
+  static const String onboardingstep1 = 'assets/images/onboardingstep1.png';
+  static const String onboardingstep2 = 'assets/images/onboardingstep2.png';
+  static const String onboardingstep3 = 'assets/images/onboardingstep3.png';
 }
 
 class IconsName {

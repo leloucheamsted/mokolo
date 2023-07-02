@@ -7,6 +7,7 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import '../../../../common/constants/layout_constants.dart';
 import '../../../../common/widgets/widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
+
 class OnBoardingPage extends StatefulWidget {
   const OnBoardingPage({super.key});
 
@@ -16,30 +17,11 @@ class OnBoardingPage extends StatefulWidget {
 
 class _OnBoardingPageState extends State<OnBoardingPage> {
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
-    final CarouselController _controller = CarouselController();
-  int _current =0;
+  final CarouselController _controller = CarouselController();
+  int _current = 0;
 
   @override
   Widget build(BuildContext context) {
-      final pages = List.generate(
-        6,
-        (index) => Container(
-          width: MediaQuery.of(context).size.width,
-              decoration: BoxDecoration(
-              //  borderRadius: BorderRadius.circular(16),
-                color: Colors.grey.shade300,
-              ),
-             // margin: EdgeInsets.symmetric(horizontal: 10, vertical: 4),
-              child: Container(
-                height: 280,
-                child: Center(
-                    child: Text(
-                  "Page $index",
-                  style: TextStyle(color: Colors.indigo),
-                )),
-              ),
-            ));
-
     return Scaffold(
       backgroundColor: Colors.white,
       // appBar: AppBar(
@@ -52,140 +34,60 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.end,
             crossAxisAlignment: CrossAxisAlignment.stretch,
-           children: [
-             CarouselSlider(
-          items: const <Widget>[
-            Card(
-              color: Colors.green,
-              child: Center(
-                child: Text('CarouselSlider Page 1'),
+            children: [
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    CarouselSlider(
+                      items: const <Widget>[
+                        OnBoardingStep1(),
+                        OnBoardingStep2(),
+                        OnBoardingStep3(),
+                        OnBoardingStep3()
+                      ],
+                      carouselController: _controller,
+                      options: CarouselOptions(
+                        scrollPhysics: const PageScrollPhysics(),
+                        //  scrollPhysics: const BouncingScrollPhysics(),
+                        viewportFraction: 1,
+                        aspectRatio: 16 / 9,
+                        disableCenter: true,
+                        pageSnapping: true,
+                        clipBehavior: Clip.hardEdge,
+                        enableInfiniteScroll: false,
+                        height: 500,
+                        onPageChanged: (index, reason) {
+                          setState(() {
+                            _current = index;
+                            if (index == 3) {
+                              print("3 found");
+                            }
+                          });
+                        },
+                        scrollDirection: Axis.horizontal,
+                      ),
+                    ),
+                    const SizedBox(height: LayoutConstants.spacingSmall),
+                    AnimatedSmoothIndicator(
+                      activeIndex: _current,
+                      count: 3,
+                      effect: const ExpandingDotsEffect(
+                        dotColor: ColorPalette.greyScale300,
+                        radius: 32,
+                        activeDotColor: ColorPalette.primaryBase,
+                        spacing: 6.0,
+                        dotHeight: 6,
+                        dotWidth: 12,
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ),
-            Card(
-              color: Colors.amber,
-              child: Center(
-                child: Text('CarouselSlider Page 2'),
-              ),
-            ),
-            Card(
-              color: Colors.red,
-              child: Center(
-                child: Text('CarouselSlider Page 3'),
-              ),
-            ),
-              Card(
-              color: Colors.red,
-              child: Center(
-                child: Text('CarouselSlider Page 3'),
-              ),
-            ),
-          ],
-          carouselController: _controller,
-
-          options: CarouselOptions(
-            //scrollPhysics: const PageScrollPhysics(),
-            scrollPhysics: const BouncingScrollPhysics(),
-            viewportFraction: 2,
-               aspectRatio: 16/9,
-               disableCenter: true,
-               pageSnapping: true,
-               clipBehavior: Clip.hardEdge,
-            enableInfiniteScroll: false,
-             height: 500,
-            // initialPage: 0,
-            // enlargeCenterPage: true,
-            onPageChanged: (index, reason) {
-              setState(() {
-                _current = index;
-              //  _controller.nextPage(),
-
-              });
-            },
-            scrollDirection: Axis.horizontal,
-          )),
-      AnimatedSmoothIndicator(
-        activeIndex: _current,
-        count: 3,
-        effect: const ExpandingDotsEffect(
-            dotHeight: 10,
-            dotWidth: 10,
-         //   jumpScale: .7,
-          //  verticalOffset: 20,
-            activeDotColor: Colors.red,
-            dotColor: Colors.grey),
-      ),
-           //   SingleChildScrollView(
-           //     child:  
-            //     Column(
-            // crossAxisAlignment: CrossAxisAlignment.center,
-            // children: <Widget>[
-            //   SizedBox(height: 16),
-            //   SizedBox(
-            //     height: 240,
-            //     child: PageView.builder(
-            //       controller: controller,
-            //       // itemCount: pages.length,
-            //       itemBuilder: (_, index) {
-            //         return pages[index % pages.length];
-            //       },
-            //     ),
-            //   ),
-            //   Padding(
-            //     padding: const EdgeInsets.only(top: 24, bottom: 12),
-            //     child: Text(
-            //       'Worm',
-            //       style: TextStyle(color: Colors.black54),
-            //     ),
-            //   ),
-                // Column(
-                //   mainAxisAlignment: MainAxisAlignment.center,
-                //   crossAxisAlignment: CrossAxisAlignment.stretch,
-                //   children: <Widget>[
-                //     Container(
-                //       color: Colors.grey.shade300,
-                //       height: 500,
-                //       child: PageView(
-                //          //physics: const NeverScrollableScrollPhysics(),
-                //         controller: controller,
-                //         children: const [
-                //           OnBoardingStep1(),
-                //           OnBoardingStep2(),
-                //           OnBoardingStep3()
-                //         ],
-                //       ),
-                //     ),
-                //     const SizedBox(
-                //       height: 60,
-                //     ),
-                //     SmoothPageIndicator(
-                //       controller: controller,
-                //       onDotClicked: (index) {
-                //         print("jump");
-                //         controller.nextPage(
-                //       duration: Duration(milliseconds: 1000),
-                //       curve: Curves.easeIn);
-            
-                //       },
-                //       count: 3,
-                //       effect: const ExpandingDotsEffect(
-                //         dotColor: ColorPalette.greyScale300,
-                //         radius: 32,
-                //         activeDotColor: ColorPalette.primaryBase,
-                //         spacing: 6.0,
-                //         dotHeight: 6,
-                //         dotWidth: 12,
-                //       ),
-                //     ),
-                //   ],
-                // ),
-            //]
-             //   )
-          //    ),
               const SizedBox(height: LayoutConstants.spacingLarge),
               ActionButton(
                 onPressed: () {
                   controller.nextPage(
-                      duration: Duration(milliseconds: 1000),
+                      duration: const Duration(milliseconds: 1000),
                       curve: Curves.easeIn);
                 },
                 title: 'Next',
@@ -195,17 +97,5 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
         ),
       ),
     );
-  }
-
-  Widget _step1Widget() {
-    return Container();
-  }
-
-  Widget _step2Widget() {
-    return Container();
-  }
-
-  Widget _step3Widget() {
-    return Container();
   }
 }

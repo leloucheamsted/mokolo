@@ -1,24 +1,40 @@
 import 'package:flutter/material.dart';
 
+import '../../../../../common/constants/constants.dart';
+
 class OnBoardingStep3 extends StatelessWidget {
   const OnBoardingStep3({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
-       width:MediaQuery.of(context).size.width-48,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(0),
-        color: Colors.grey.shade300,
       ),
-      margin: const EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-      child: const SizedBox(
-        height: 280,
-        child: Center(
-            child: Text(
-          "Page 3",
-          style: TextStyle(color: Colors.indigo),
-        )),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+          SizedBox(
+            child: Image.asset(
+              ImagesName.onboardingstep3,
+              height: 380,
+            ),
+          ),
+          Container(
+            alignment: Alignment.center,
+            child: const Text(
+              'Track your home delivery',
+              textAlign: TextAlign.center,
+              softWrap: true,
+              style: TextStyle(
+                  fontFamily: Fonts.bold,
+                  color: ColorPalette.greyScale900,
+                  fontWeight: FontWeight.w600,
+                  fontSize: FontsSize.head3),
+            ),
+          )
+        ],
       ),
     );
   }
