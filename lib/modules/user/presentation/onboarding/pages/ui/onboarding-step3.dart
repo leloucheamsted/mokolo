@@ -6,7 +6,7 @@ class OnBoardingStep3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: double.infinity,
+       width:MediaQuery.of(context).size.width-48,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(0),
         color: Colors.grey.shade300,

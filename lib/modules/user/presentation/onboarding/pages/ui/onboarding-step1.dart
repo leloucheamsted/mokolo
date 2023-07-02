@@ -7,49 +7,34 @@ class OnBoardingStep1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Container(
-      width: double.infinity,
+    //width:MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(0),
-                color: Colors.grey.shade300,
+               // color: Colors.grey.shade300,
+                     color:Colors.red,
               ),
-              margin: EdgeInsets.symmetric(horizontal: 0, vertical: 0),
-              child: Container(
-                height: 280,
-                child: Center(
-                    child: Text(
-                  "Page 1",
-                  style: TextStyle(color: Colors.indigo),
-                )),
-              )
-    );
-    
-    // //  Container(
-    //   color: Colors.red,
-      
-    //   child: Column(
-    //     crossAxisAlignment: CrossAxisAlignment.stretch,
-    //     mainAxisAlignment: MainAxisAlignment.start,
-    //     children: [
-    //        SizedBox(
-    //        child: Image.asset(ImagesName.onboardingstep1,height: 400,)
-    //       //  child:  SvgPicture.asset(ImagesName.onboardingstep1,height: 400,width: 1000,),
-    //     ),
-    //       Container(
-    //         width: double.infinity,
-    //         alignment: Alignment.center,
-    //         child: const Text(
-    //           'Browse your favorite stores',
-    //           textAlign: TextAlign.center,
-    //         style: TextStyle(
-    //           fontFamily: Fonts.bold,
-    //           color: ColorPalette.greyScale900,
-    //           fontWeight: FontWeight.w600,
-    //           fontSize: FontsSize.head3
-    //         ),
-    //         ),
-    //       )
-    //     ],
-    //   ),
-    // );
+              child: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        mainAxisAlignment: MainAxisAlignment.start,
+        children: [
+           SizedBox(
+           child: Image.asset(ImagesName.onboardingstep1,height: 400,)
+          //  child:  SvgPicture.asset(ImagesName.onboardingstep1,height: 400,width: 1000,),
+        ),
+          Container(
+            alignment: Alignment.center,
+            child: const Text(
+              'Browse your favorite stores',
+              textAlign: TextAlign.center,
+            style: TextStyle(
+              fontFamily: Fonts.bold,
+              color: ColorPalette.greyScale900,
+              fontWeight: FontWeight.w600,
+              fontSize: FontsSize.head3
+            ),
+            ),
+          )
+        ],
+      ));
   }
 }
