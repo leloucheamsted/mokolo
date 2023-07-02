@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
 import 'package:mokolo/modules/user/presentation/onboarding/pages/ui/onboarding-step1.dart';
 import 'package:mokolo/modules/user/presentation/onboarding/pages/ui/onboarding-step2.dart';
 import 'package:mokolo/modules/user/presentation/onboarding/pages/ui/onboarding-step3.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import '../../../../../routes/app_routes.enum.dart';
 import '../../../../common/constants/layout_constants.dart';
 import '../../../../common/widgets/widgets.dart';
 import 'package:carousel_slider/carousel_slider.dart';
@@ -19,6 +21,7 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
   final controller = PageController(viewportFraction: 0.8, keepPage: true);
   final CarouselController _controller = CarouselController();
   int _current = 0;
+  String _statutText = 'Next';
 
   @override
   Widget build(BuildContext context) {
@@ -59,8 +62,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
                         onPageChanged: (index, reason) {
                           setState(() {
                             _current = index;
+                            if (index > 1) {
+                              _statutText = "Start Shopping";
+                            } else {
+                              _statutText = "Next";
+                            }
                             if (index == 3) {
-                              print("3 found");
+                              //print(" found");
                             }
                           });
                         },
@@ -86,11 +94,13 @@ class _OnBoardingPageState extends State<OnBoardingPage> {
               const SizedBox(height: LayoutConstants.spacingLarge),
               ActionButton(
                 onPressed: () {
-                  controller.nextPage(
-                      duration: const Duration(milliseconds: 1000),
-                      curve: Curves.easeIn);
+                  _current != 2
+                      ? _controller.nextPage(
+                          duration: const Duration(milliseconds: 1000),
+                          curve: Curves.easeIn)
+                      : Modular.to.pushNamed(AppRoute.auth.path);
                 },
-                title: 'Next',
+                title: _statutText,
               ),
             ],
           ),

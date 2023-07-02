@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class OnBoardingStep1 extends StatelessWidget {
   const OnBoardingStep1({super.key});

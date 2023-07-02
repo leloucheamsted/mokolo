@@ -9,7 +9,8 @@ class NavObserver extends RouteObserver<PageRoute> {
   final List<Route<dynamic>> routeStack = [];
 
   // final StreamController<Route<dynamic>> _streamController =StreamController<Route<dynamic>>.broadcast();
-  final BehaviorSubject<Route<dynamic>> _streamController = BehaviorSubject<Route<dynamic>>();
+  final BehaviorSubject<Route<dynamic>> _streamController =
+      BehaviorSubject<Route<dynamic>>();
 
   Stream<Route<dynamic>> get currentRouteStream => _streamController.stream;
 
@@ -51,8 +52,6 @@ class NavObserver extends RouteObserver<PageRoute> {
   // String? get triggeredFullPath => _triggeredFullPath;
 
   void _addRoute(Route<dynamic> route) {
-    //TODO check if exists and remove old route
-
     final RouteSettings routeSettings = route.settings;
     routeStack.add(route);
 
@@ -79,7 +78,7 @@ class NavObserver extends RouteObserver<PageRoute> {
       routeStack.removeLast();
     }*/
     routeStack.remove(route);
-   // _onActiveRoute(routeStack.last);
+    // _onActiveRoute(routeStack.last);
   }
 
   @override
