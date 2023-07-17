@@ -65,7 +65,7 @@ class _LayoutState extends State<Layout> with SingleTickerProviderStateMixin {
                   children: [
                     _navigationItem(IconsName.home, TabList.home, 0),
                     _navigationItem(IconsName.search, TabList.search, 1),
-                    _navigationItem(IconsName.bag, TabList.order, 2),
+                    _navigationItem(IconsName.order, TabList.order, 2),
                     _navigationItem(IconsName.profile, TabList.profile, 3),
                   ],
                 ),

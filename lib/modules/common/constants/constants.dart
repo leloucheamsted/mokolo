@@ -160,6 +160,7 @@ class ImagesName {
 
 class IconsName {
   static const String back = 'assets/icons/back.svg';
+  static const String order = 'assets/icons/order.svg';
   static const String bag = 'assets/icons/bag.svg';
   static const String card = 'assets/icons/card.svg';
   static const String chevronRight = 'assets/icons/chevron-right.svg';
