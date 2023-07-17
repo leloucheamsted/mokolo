@@ -3,7 +3,7 @@ enum AppRoute {
   splash("/splash/"),
   onboarding("/onboarding/"),
   home("/home"),
-  layout('/layout'),
+  layout('/layout/'),
   auth("/auth/"),
   otp("/auth/otp/"),
 

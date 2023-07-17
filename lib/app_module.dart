@@ -1,5 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:mokolo/modules/layout/layout.module.dart';
+import 'package:mokolo/modules/core/layout/layout.module.dart';
 import 'package:mokolo/modules/user/auth.module.dart';
 import 'package:mokolo/modules/user/onboarding.module.dart';
 import 'package:mokolo/routes/nav_observer.dart';
