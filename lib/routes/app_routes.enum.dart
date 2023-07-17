@@ -2,10 +2,13 @@ enum AppRoute {
   initial("/"),
   splash("/splash/"),
   onboarding("/onboarding/"),
-  home("/home"),
-  layout('/layout/'),
+
   auth("/auth/"),
   otp("/auth/otp/"),
+
+  layout('/layout/'),
+  home("/home/"),
+  store("/home/store/"),
 
   user("/user/"),
   userProfileCurrent("/user/profile"),

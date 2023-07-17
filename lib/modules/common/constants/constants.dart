@@ -139,6 +139,10 @@ class FontsSize {
   static const double xsmall = 10.0;
 }
 
+class AssetName {
+  static const String appName = "shoppa";
+}
+
 class TabList {
   static const String home = "Home";
   static const String search = "Search";
@@ -148,6 +152,7 @@ class TabList {
 
 class ImagesName {
   static const String mokolo = 'assets/images/mokolo.png';
+  static const String apple = 'assets/images/apple.png';
   static const String onboardingstep1 = 'assets/images/onboardingstep1.png';
   static const String onboardingstep2 = 'assets/images/onboardingstep2.png';
   static const String onboardingstep3 = 'assets/images/onboardingstep3.png';
