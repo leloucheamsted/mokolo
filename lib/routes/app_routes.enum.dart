@@ -3,15 +3,16 @@ enum AppRoute {
   splash("/splash/"),
   onboarding("/onboarding/"),
   home("/home"),
-
+  layout('/layout'),
   auth("/auth/"),
   otp("/auth/otp/"),
 
   user("/user/"),
   userProfileCurrent("/user/profile"),
   userProfileEdit("/user/profile/edit"),
-;
-    String get pathAsChild {
+  ;
+
+  String get pathAsChild {
     final List l = path.split("/");
     l.removeAt(0);
     if (path.startsWith("/")) {

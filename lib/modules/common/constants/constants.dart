@@ -139,7 +139,12 @@ class FontsSize {
   static const double xsmall = 10.0;
 }
 
-class AssetName {}
+class TabList {
+  static const String home = "Home";
+  static const String search = "Search";
+  static const String order = "Order";
+  static const String profile = "Profile";
+}
 
 class ImagesName {
   static const String mokolo = 'assets/images/mokolo.png';

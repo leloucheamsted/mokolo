@@ -29,7 +29,7 @@ class _PhoneInputPageState extends State<PhoneInputPage> {
       backgroundColor: ColorPalette.white,
       body: SafeArea(
         child: Padding(
-          padding: EdgeInsets.all(LayoutConstants.paddingXlarge),
+          padding: const EdgeInsets.all(LayoutConstants.paddingXlarge),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             mainAxisAlignment: MainAxisAlignment.start,

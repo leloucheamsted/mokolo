@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mokolo/modules/layout/layout.module.dart';
 import 'package:mokolo/modules/user/auth.module.dart';
 import 'package:mokolo/modules/user/onboarding.module.dart';
 import 'package:mokolo/routes/nav_observer.dart';
@@ -22,6 +23,7 @@ class AppModule extends Module {
   final List<ModularRoute> routes = [
     ChildRoute(AppRoute.initial.path, child: (_, __) => const SplashPage()),
     ModuleRoute(AppRoute.auth.path, module: AuthModule()),
+    ModuleRoute(AppRoute.layout.path, module: LayoutModule()),
     ModuleRoute(AppRoute.onboarding.path, module: OnBoardingModule()),
     WildcardRoute(child: (context, args) => const RouteNotFoundPage()),
   ];
