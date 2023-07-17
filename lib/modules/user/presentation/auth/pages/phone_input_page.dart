@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
 import 'package:mokolo/modules/common/widgets/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:mokolo/modules/user/presentation/auth/pages/ui/input_phone.dart';
+import '../../../../../routes/app_routes.enum.dart';
 import '../../../../common/constants/layout_constants.dart';
 
 class PhoneInputPage extends StatefulWidget {
@@ -60,7 +63,14 @@ class _PhoneInputPageState extends State<PhoneInputPage> {
                     const SizedBox(
                       height: LayoutConstants.spacingLarge,
                     ),
-                    ActionButton(title: 'Continue', onPressed: () => {})
+                    const InputPhone(),
+                    const SizedBox(
+                      height: LayoutConstants.spacingXBig,
+                    ),
+                    ActionButton(
+                        title: 'Continue',
+                        onPressed: () =>
+                            {Modular.to.pushNamed(AppRoute.otp.path)})
                   ],
                 ),
               ),

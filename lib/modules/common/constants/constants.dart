@@ -170,4 +170,5 @@ class IconsName {
   static const String ticketDiscount = 'assets/icons/ticket-discount.svg';
   static const String trash = 'assets/icons/trash.svg';
   static const String truckDelivery = 'assets/icons/truck-delivery.svg';
+  static const String cm = 'assets/icons/cm.svg';
 }
