@@ -29,14 +29,14 @@ class LayoutConstants {
   static const double paddingLarge = 16.0;
   static const double paddingMedium = 12.0;
   static const double paddingSmall = 10.0;
+  static const double paddingZero = 0.0;
 
   // Icon Size
-  static const double large =24.0;
-  static const double medium =20.0;
-
+  static const double large = 24.0;
+  static const double medium = 20.0;
 
   // Others
-  static const double actionBtnHeight=56.0;
-  static const double textFieldHeight=56.0;
-  static const double appBarSize =45.0;
+  static const double actionBtnHeight = 56.0;
+  static const double textFieldHeight = 56.0;
+  static const double appBarSize = 45.0;
 }

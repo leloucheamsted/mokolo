@@ -7,8 +7,11 @@ enum AppRoute {
   otp("/auth/otp/"),
 
   layout('/layout/'),
+
   home("/home/"),
   store("/home/store/"),
+
+  notification("/notification/"),
 
   user("/user/"),
   userProfileCurrent("/user/profile"),

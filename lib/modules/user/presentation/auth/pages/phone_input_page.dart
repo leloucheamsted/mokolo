@@ -21,7 +21,7 @@ class _PhoneInputPageState extends State<PhoneInputPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: LayoutConstants.appBarSize + 10,
-        flexibleSpace: BackEmptyAppBar(
+        flexibleSpace: BackCustomAppBar(
           callback: () {},
           child: SvgPicture.asset(IconsName.close),
         ),

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/common/widgets/widgets.dart';
 
+import '../../../../../routes/app_routes.enum.dart';
 import '../../../../common/constants/constants.dart';
 import '../../../../common/constants/layout_constants.dart';
 
@@ -28,8 +30,25 @@ class HomeAppBar extends StatelessWidget {
                   fontSize: FontsSize.head4),
             ),
             SizedBox(
-                child: const BadgeIconButton(
-                    iconName: IconsName.notification, badgeCount: "2"))
+                child: Material(
+              color: Colors.white.withOpacity(0.0),
+              child: InkWell(
+                splashColor: ColorPalette.secondaryBase,
+                borderRadius: BorderRadius.circular(LayoutConstants.radiusBig),
+                onTap: () {
+                  Modular.to.pushNamed(AppRoute.notification.path);
+                },
+                child: Ink(
+                  decoration: BoxDecoration(
+                    color: ColorPalette.white,
+                    borderRadius:
+                        BorderRadius.circular(LayoutConstants.radiusBig),
+                  ),
+                  child: const BadgeIconButton(
+                      iconName: IconsName.notification, badgeCount: "2"),
+                ),
+              ),
+            ))
           ]),
     );
     ;

@@ -15,7 +15,7 @@ class StoreAppBar extends StatelessWidget {
           horizontal: LayoutConstants.paddingXlarge,
           vertical: LayoutConstants.paddingLarge),
       alignment: Alignment.bottomCenter,
-      height: LayoutConstants.appBarSize * 3,
+      height: LayoutConstants.appBarSize * 2.2,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,

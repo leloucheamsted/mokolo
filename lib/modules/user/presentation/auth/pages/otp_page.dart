@@ -6,7 +6,7 @@ import 'package:mokolo/modules/user/presentation/auth/pages/ui/input_code.dart';
 import '../../../../../routes/app_routes.enum.dart';
 import '../../../../common/constants/constants.dart';
 import '../../../../common/constants/layout_constants.dart';
-import '../../../../common/widgets/appBar/back__empty_app_bar.dart';
+import '../../../../common/widgets/appBar/back_custom_app_bar.dart';
 import '../../../../common/widgets/buttons/action_button.dart';
 
 class OtpPage extends StatefulWidget {
@@ -23,7 +23,7 @@ class _OtpPageState extends State<OtpPage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         toolbarHeight: LayoutConstants.appBarSize + 10,
-        flexibleSpace: BackEmptyAppBar(
+        flexibleSpace: BackCustomAppBar(
           callback: () {},
           child: SvgPicture.asset(IconsName.back),
         ),

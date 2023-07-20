@@ -3,10 +3,10 @@ import 'dart:io';
 import '../../constants/constants.dart';
 import '../../constants/layout_constants.dart';
 
-class BackEmptyAppBar extends StatelessWidget {
+class BackCustomAppBar extends StatelessWidget {
   final Widget child;
   final VoidCallback callback;
-  const BackEmptyAppBar(
+  const BackCustomAppBar(
       {super.key, required this.callback, required this.child});
 
   @override
@@ -17,7 +17,7 @@ class BackEmptyAppBar extends StatelessWidget {
       padding: const EdgeInsets.symmetric(
           horizontal: LayoutConstants.paddingXlarge,
           vertical: LayoutConstants.paddingLarge),
-      height: LayoutConstants.appBarSize * 2,
+      height: LayoutConstants.appBarSize * 2.2,
       color: ColorPalette.white,
       alignment: Alignment.bottomLeft,
       child: child,
