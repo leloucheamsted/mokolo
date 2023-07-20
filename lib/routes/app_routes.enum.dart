@@ -13,6 +13,8 @@ enum AppRoute {
 
   notification("/notification/"),
 
+  search("/search/"),
+
   user("/user/"),
   userProfileCurrent("/user/profile"),
   userProfileEdit("/user/profile/edit"),

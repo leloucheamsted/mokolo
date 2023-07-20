@@ -7,12 +7,8 @@ class NotificationItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      // decoration: const BoxDecoration(
-      //   border: Border(
-      //       bottom: BorderSide(width: 1, color: ColorPalette.greyScale400)),
-      // ),
-      child: const Padding(
+    return const SizedBox(
+      child: Padding(
         padding: EdgeInsets.all(LayoutConstants.paddingLarge),
         child: Column(
           children: [
