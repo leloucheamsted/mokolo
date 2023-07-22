@@ -4,12 +4,15 @@ import 'package:mokolo/modules/core/layout/layout.module.dart';
 import 'package:mokolo/modules/home/home.module.dart';
 import 'package:mokolo/modules/notifications/notifications.module.dart';
 import 'package:mokolo/modules/search/search.module.dart';
+import 'package:mokolo/modules/shipping/shipping.module.dart';
 import 'package:mokolo/modules/user/auth.module.dart';
 import 'package:mokolo/modules/user/onboarding.module.dart';
+import 'package:mokolo/routes/app_down_page.dart';
 import 'package:mokolo/routes/nav_observer.dart';
 import 'modules/core/core.module.dart';
 import 'modules/splash/blocs/splash_bloc.dart';
 import 'modules/splash/pages/splash_page.dart';
+import 'modules/user/user.module.dart';
 import 'routes/app_routes.enum.dart';
 import 'routes/route_not_found_page.dart';
 
@@ -30,7 +33,9 @@ class AppModule extends Module {
     ModuleRoute(AppRoute.layout.path, module: LayoutModule()),
     ModuleRoute(AppRoute.home.path, module: HomeModule()),
     ModuleRoute(AppRoute.home.path, module: SearchModule()),
+    ModuleRoute(AppRoute.user.path, module: UserModule()),
     ModuleRoute(AppRoute.cart.path, module: CartModule()),
+    ModuleRoute(AppRoute.shipping.path, module: ShippingModule()),
     ModuleRoute(AppRoute.notification.path, module: NotificationModule()),
     ModuleRoute(AppRoute.onboarding.path, module: OnBoardingModule()),
     WildcardRoute(child: (context, args) => const RouteNotFoundPage()),

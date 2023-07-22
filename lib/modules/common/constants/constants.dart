@@ -153,7 +153,7 @@ class TabList {
 class ImagesName {
   static const String mokolo = 'assets/images/mokolo.png';
   static const String photo = 'assets/images/photo.png';
-
+  static const String map = 'assets/images/map.png';
   static const String apple = 'assets/images/apple.png';
   static const String onboardingstep1 = 'assets/images/onboardingstep1.png';
   static const String onboardingstep2 = 'assets/images/onboardingstep2.png';
@@ -162,8 +162,30 @@ class ImagesName {
 
 class IconsName {
   static const String back = 'assets/icons/back.svg';
-  static const String emptyCart = 'assets/icons/emptyCart.svg';
+  static const String user = 'assets/icons/user.svg';
+  static const String message = 'assets/icons/message.svg';
+  static const String map1 = 'assets/icons/map1.svg';
+  static const String global = 'assets/icons/global.svg';
+  static const String users = 'assets/icons/users.svg';
+  static const String lock = 'assets/icons/lock.svg';
+  static const String star = 'assets/icons/star.svg';
+  static const String gb = 'assets/icons/gb.svg';
+  static const String fr = 'assets/icons/fr.svg';
 
+  static const String addressHome = 'assets/icons/address_home.svg';
+  static const String building = 'assets/icons/building.svg';
+  static const String check = 'assets/icons/check.svg';
+  static const String map = 'assets/icons/map.svg';
+  static const String noresult = 'assets/icons/not_result.svg';
+  static const String noconnexion = 'assets/icons/noconnexion.svg';
+  static const String serverdown = 'assets/icons/serverdown.svg';
+
+  static const String notfound = 'assets/icons/404.svg';
+  // ignore: constant_identifier_names
+  static const String map_pin = 'assets/icons/map-pin.svg';
+  static const String disablemap = 'assets/icons/disablemap.svg';
+  static const String edit = 'assets/icons/edit.svg';
+  static const String emptyCart = 'assets/icons/emptyCart.svg';
   static const String promo = 'assets/icons/promo.svg';
   static const String order = 'assets/icons/order.svg';
   static const String bag = 'assets/icons/bag.svg';

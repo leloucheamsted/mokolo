@@ -15,11 +15,18 @@ enum AppRoute {
   cart("/cart/"),
   promo("/cart/promo/"),
 
+  shipping("/shipping/"),
+  address("/shipping/address/"),
+  newaddress("/shipping/address/new/"),
+  pinaddress("/shipping/address/pin/"),
+
   search("/search/"),
 
   user("/user/"),
   userProfileCurrent("/user/profile"),
   userProfileEdit("/user/profile/edit"),
+  userProfileNotification("/user/profile/notification"),
+  userProfileLanguage("/user/profile/language"),
   ;
 
   String get pathAsChild {

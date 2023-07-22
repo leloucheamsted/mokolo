@@ -167,7 +167,7 @@ class _PromoPageState extends State<PromoPage> {
           ],
         ),
         ActionButton(
-            title: 'Proceed',
+            title: 'Use code',
             onPressed: () {},
             width: MediaQuery.of(context).size.width / 2)
       ],

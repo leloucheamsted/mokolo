@@ -7,7 +7,7 @@ import 'package:mokolo/modules/core/layout/bloc/layout_bloc.dart';
 import 'package:mokolo/modules/core/presentation/stream_builder_all.dart';
 import 'package:mokolo/modules/home/presentation/pages/home.page.dart';
 import 'package:mokolo/modules/orders/presentation/pages/orders.page.dart';
-import 'package:mokolo/modules/profile/presentation/pages/profile.page.dart';
+import 'package:mokolo/modules/user/presentation/pages/profile.page.dart';
 import 'package:mokolo/modules/search/presentation/pages/search.page.dart';
 
 class Layout extends StatefulWidget {

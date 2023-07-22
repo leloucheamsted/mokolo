@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:mokolo/modules/common/constants/constants.dart';
+import 'package:mokolo/modules/common/constants/layout_constants.dart';
+import 'package:mokolo/modules/common/widgets/widgets.dart';
 
 class RouteNotFoundPage extends StatelessWidget {
   const RouteNotFoundPage({Key? key}) : super(key: key);
@@ -9,11 +13,42 @@ class RouteNotFoundPage extends StatelessWidget {
     // final String currentRoute =Modular.to.navigateHistory.map((e) => e.name).toList().join("\n");
     final String currentRoute = Modular.to.path;
     return Scaffold(
-      appBar: AppBar(
-        title: Text("RouteNotFoundPage"),
-      ),
-      body: Center(
-        child: Text("RouteNotFoundPage\n$currentRoute"),
+      backgroundColor: ColorPalette.white,
+      body: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.all(LayoutConstants.paddingXlarge * 2),
+          child: Center(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                SvgPicture.asset(IconsName.notfound),
+                const SizedBox(height: LayoutConstants.spacingBig),
+                const Text(
+                  'Something went wrong',
+                  style: TextStyle(
+                      color: ColorPalette.greyScale900,
+                      fontWeight: FontWeight.w600,
+                      fontFamily: Fonts.bold,
+                      fontSize: FontsSize.head4,
+                      letterSpacing: 0.4),
+                ),
+                const Text(
+                  'This page doesn’t exist or was removed! we suggest you back to home.',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                      color: ColorPalette.greyScale400,
+                      fontWeight: FontWeight.w400,
+                      fontFamily: Fonts.regular,
+                      fontSize: FontsSize.medium,
+                      letterSpacing: 0.4),
+                ),
+                const SizedBox(height: LayoutConstants.spacingLarge),
+                ActionButton(title: 'Home', width: 150, onPressed: () {})
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
