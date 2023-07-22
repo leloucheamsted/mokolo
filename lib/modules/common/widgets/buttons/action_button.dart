@@ -5,13 +5,16 @@ import 'package:mokolo/modules/common/constants/layout_constants.dart';
 
 class ActionButton extends StatelessWidget {
   final String title;
+  final double? width;
   final VoidCallback onPressed;
-  const ActionButton({super.key, required this.title, required this.onPressed});
+  ActionButton(
+      {super.key, required this.title, required this.onPressed, this.width});
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       height: LayoutConstants.actionBtnHeight,
+      width: width,
       child: OutlinedButton(
         onPressed: onPressed,
         style: ButtonStyle(

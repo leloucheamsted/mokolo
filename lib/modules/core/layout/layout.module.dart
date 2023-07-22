@@ -3,8 +3,6 @@ import 'package:mokolo/modules/core/layout/bloc/layout_bloc.dart';
 import 'package:mokolo/modules/core/layout/presentation/pages/layout.dart';
 import 'package:mokolo/routes/app_routes.enum.dart';
 
-import '../../home/home.module.dart';
-
 class LayoutModule extends Module {
   @override
   List<Bind<Object>> get binds => [

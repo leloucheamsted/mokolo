@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
+import 'package:mokolo/modules/common/widgets/appBar/app_bar.dart';
 
 import '../../../common/constants/layout_constants.dart';
 import '../../../common/widgets/appBar/back_custom_app_bar.dart';
@@ -14,30 +15,10 @@ class NotificationPage extends StatelessWidget {
     return Scaffold(
       backgroundColor: ColorPalette.white,
       appBar: AppBar(
-        automaticallyImplyLeading: false,
-        toolbarHeight: LayoutConstants.appBarSize,
-        flexibleSpace: BackCustomAppBar(
-          callback: () {},
-          child: Row(
-            children: [
-              SvgPicture.asset(IconsName.back),
-              const Spacer(),
-              const Text(
-                'Notifications',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                    color: ColorPalette.greyScale900,
-                    fontStyle: FontStyle.normal,
-                    fontWeight: FontWeight.w600,
-                    letterSpacing: 0.1,
-                    fontSize: FontsSize.xlarge,
-                    fontFamily: Fonts.bold),
-              ),
-              const Spacer(),
-            ],
-          ),
-        ),
-      ),
+          automaticallyImplyLeading: false,
+          toolbarHeight: LayoutConstants.appBarSize,
+          flexibleSpace:
+              BackTitleAppBar(title: 'Notifications', callback: () {})),
       body: const SafeArea(
         child: Padding(
           padding: EdgeInsets.fromLTRB(

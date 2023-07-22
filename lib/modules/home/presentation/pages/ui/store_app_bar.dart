@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
 import 'package:mokolo/modules/common/widgets/widgets.dart';
 
+import '../../../../../routes/app_routes.enum.dart';
 import '../../../../common/constants/layout_constants.dart';
 
 class StoreAppBar extends StatelessWidget {
@@ -31,9 +33,27 @@ class StoreAppBar extends StatelessWidget {
               fontSize: FontsSize.large,
             ),
           ),
-          const BadgeIconButton(
-            iconName: IconsName.bag,
-            badgeCount: "2",
+          SizedBox(
+            child: Material(
+              color: Colors.white.withOpacity(0.0),
+              child: InkWell(
+                splashColor: ColorPalette.secondaryBase,
+                borderRadius: BorderRadius.circular(LayoutConstants.radiusBig),
+                onTap: () {
+                  Modular.to.pushNamed(AppRoute.cart.path);
+                },
+                child: Ink(
+                    decoration: BoxDecoration(
+                      color: ColorPalette.white,
+                      borderRadius:
+                          BorderRadius.circular(LayoutConstants.radiusBig),
+                    ),
+                    child: const BadgeIconButton(
+                      iconName: IconsName.bag,
+                      badgeCount: "2",
+                    )),
+              ),
+            ),
           )
         ],
       ),

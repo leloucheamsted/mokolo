@@ -18,24 +18,22 @@ class HomePage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.fromLTRB(LayoutConstants.paddingXlarge,
               LayoutConstants.paddingXlarge, LayoutConstants.paddingXlarge, 0),
-          child: Expanded(
-            child: MediaQuery.removeViewPadding(
-              context: context,
-              removeTop: true,
-              child: GridView.builder(
-                  itemCount: 16,
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  primary: false,
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                    mainAxisSpacing: LayoutConstants.spacingLarge,
-                    crossAxisSpacing: LayoutConstants.spacingMedium,
-                  ),
-                  itemBuilder: (_, index) {
-                    return const ShopItem();
-                  }),
-            ),
+          child: MediaQuery.removeViewPadding(
+            context: context,
+            removeTop: true,
+            child: GridView.builder(
+                itemCount: 16,
+                scrollDirection: Axis.vertical,
+                shrinkWrap: true,
+                primary: false,
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 3,
+                  mainAxisSpacing: LayoutConstants.spacingLarge,
+                  crossAxisSpacing: LayoutConstants.spacingMedium,
+                ),
+                itemBuilder: (_, index) {
+                  return const ShopItem();
+                }),
           ),
         ),
       ),

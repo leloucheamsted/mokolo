@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mokolo/modules/cart/cart.module.dart';
 import 'package:mokolo/modules/core/layout/layout.module.dart';
 import 'package:mokolo/modules/home/home.module.dart';
 import 'package:mokolo/modules/notifications/notifications.module.dart';
@@ -29,6 +30,7 @@ class AppModule extends Module {
     ModuleRoute(AppRoute.layout.path, module: LayoutModule()),
     ModuleRoute(AppRoute.home.path, module: HomeModule()),
     ModuleRoute(AppRoute.home.path, module: SearchModule()),
+    ModuleRoute(AppRoute.cart.path, module: CartModule()),
     ModuleRoute(AppRoute.notification.path, module: NotificationModule()),
     ModuleRoute(AppRoute.onboarding.path, module: OnBoardingModule()),
     WildcardRoute(child: (context, args) => const RouteNotFoundPage()),

@@ -88,7 +88,7 @@ class ColorPalette {
   static const Color errorBase = Color.fromRGBO(253, 106, 106, 1);
   static const Color errorDark = Color.fromRGBO(253, 79, 79, 1);
   static const Color errorLight = Color.fromRGBO(253, 129, 129, 1);
-
+  static const Color dangerColor = Color.fromRGBO(255, 245, 245, 1);
   static const Color warnBase = Color.fromRGBO(255, 208, 35, 1);
   static const Color warnDark = Color.fromRGBO(230, 187, 32, 1);
   static const Color warnLight = Color.fromRGBO(255, 222, 101, 1);
@@ -152,6 +152,8 @@ class TabList {
 
 class ImagesName {
   static const String mokolo = 'assets/images/mokolo.png';
+  static const String photo = 'assets/images/photo.png';
+
   static const String apple = 'assets/images/apple.png';
   static const String onboardingstep1 = 'assets/images/onboardingstep1.png';
   static const String onboardingstep2 = 'assets/images/onboardingstep2.png';
@@ -160,6 +162,9 @@ class ImagesName {
 
 class IconsName {
   static const String back = 'assets/icons/back.svg';
+  static const String emptyCart = 'assets/icons/emptyCart.svg';
+
+  static const String promo = 'assets/icons/promo.svg';
   static const String order = 'assets/icons/order.svg';
   static const String bag = 'assets/icons/bag.svg';
   static const String card = 'assets/icons/card.svg';

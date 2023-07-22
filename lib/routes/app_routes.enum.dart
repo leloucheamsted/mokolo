@@ -10,8 +10,10 @@ enum AppRoute {
 
   home("/home/"),
   store("/home/store/"),
-
   notification("/notification/"),
+
+  cart("/cart/"),
+  promo("/cart/promo/"),
 
   search("/search/"),
 
