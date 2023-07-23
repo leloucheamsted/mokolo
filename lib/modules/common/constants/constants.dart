@@ -171,6 +171,7 @@ class IconsName {
   static const String star = 'assets/icons/star.svg';
   static const String gb = 'assets/icons/gb.svg';
   static const String fr = 'assets/icons/fr.svg';
+  static const String alert = 'assets/icons/alert.svg';
 
   static const String addressHome = 'assets/icons/address_home.svg';
   static const String building = 'assets/icons/building.svg';

@@ -74,6 +74,8 @@ class ProfilePage extends StatelessWidget {
               const SizedBox(height: LayoutConstants.spacingMedium),
               OutlinedButton(
                 style: ButtonStyle(
+                  overlayColor: MaterialStateProperty.all<Color>(
+                      ColorPalette.dangerColor),
                   shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                     RoundedRectangleBorder(
                       borderRadius:
@@ -81,7 +83,9 @@ class ProfilePage extends StatelessWidget {
                     ),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Modular.to.pushNamed(AppRoute.userProfileDelete.path);
+                },
                 child: const Padding(
                   padding: EdgeInsets.all(LayoutConstants.paddingLarge),
                   child: Text(

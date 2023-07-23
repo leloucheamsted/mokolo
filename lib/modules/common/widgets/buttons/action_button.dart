@@ -6,9 +6,14 @@ import 'package:mokolo/modules/common/constants/layout_constants.dart';
 class ActionButton extends StatelessWidget {
   final String title;
   final double? width;
+  final Color? color;
   final VoidCallback onPressed;
   ActionButton(
-      {super.key, required this.title, required this.onPressed, this.width});
+      {super.key,
+      required this.title,
+      required this.onPressed,
+      this.width,
+      this.color});
 
   @override
   Widget build(BuildContext context) {
@@ -23,8 +28,8 @@ class ActionButton extends StatelessWidget {
               borderRadius: BorderRadius.circular(LayoutConstants.radiusBig),
             ),
           ),
-          backgroundColor:
-              MaterialStateProperty.all<Color>(ColorPalette.primaryBase),
+          backgroundColor: MaterialStateProperty.all<Color>(
+              color ?? ColorPalette.primaryBase),
         ),
         child: Text(
           title,

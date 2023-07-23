@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mokolo/modules/user/presentation/pages/delete_account.page.dart';
 import 'package:mokolo/modules/user/presentation/pages/edit_profile.page.dart';
 import 'package:mokolo/modules/user/presentation/pages/language_profile.page.dart';
 import 'package:mokolo/modules/user/presentation/pages/notification-setting.page.dart';
@@ -18,5 +19,7 @@ class UserModule extends Module {
             child: (context, args) => const NotificationSettingPage()),
         ChildRoute(AppRoute.userProfileLanguage.pathAsChild,
             child: (context, args) => const LanguageProfilePage()),
+        ChildRoute(AppRoute.userProfileDelete.pathAsChild,
+            child: (context, args) => const DeleteAccountPage()),
       ];
 }

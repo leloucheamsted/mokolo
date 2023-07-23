@@ -23,7 +23,7 @@ class LanguageProfilePage extends StatelessWidget {
         child: Column(
           children: [
             _languageItem(true, 'English', IconsName.gb),
-            _languageItem(true, 'French', IconsName.fr),
+            _languageItem(false, 'French', IconsName.fr),
           ],
         ),
       )),
@@ -35,6 +35,7 @@ class LanguageProfilePage extends StatelessWidget {
       padding:
           const EdgeInsets.symmetric(vertical: LayoutConstants.paddingMedium),
       child: Container(
+        height: 80,
         padding: const EdgeInsets.all(LayoutConstants.paddingLarge),
         alignment: Alignment.center,
         decoration: BoxDecoration(
@@ -61,19 +62,27 @@ class LanguageProfilePage extends StatelessWidget {
               ),
             ),
           ),
-          Checkbox(
-            shape: const CircleBorder(),
-            value: true,
-            activeColor: ColorPalette.secondaryBase,
-            overlayColor:
-                MaterialStateProperty.all<Color?>(ColorPalette.greyScale200),
-            fillColor:
-                MaterialStateProperty.all<Color?>(ColorPalette.greyScale200),
-            onChanged: (bool) {
-              //   setState(() {
-              //     this.value = value;
-              //   });
-            },
+          Container(
+            height: 20,
+            width: 20,
+            padding: const EdgeInsets.all(1),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              color: isChoice ? ColorPalette.secondaryBase : ColorPalette.white,
+              border: Border.all(
+                width: 1,
+                color: isChoice
+                    ? ColorPalette.secondaryBase
+                    : ColorPalette.greyScale300,
+              ),
+              borderRadius:
+                  BorderRadius.circular(LayoutConstants.radiusLarge - 4),
+            ),
+            child: SizedBox(
+              child: isChoice
+                  ? SvgPicture.asset(IconsName.check, color: ColorPalette.white)
+                  : null,
+            ),
           ),
         ]),
       ),

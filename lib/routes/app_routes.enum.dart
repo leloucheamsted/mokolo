@@ -26,6 +26,7 @@ enum AppRoute {
   userProfileCurrent("/user/profile"),
   userProfileEdit("/user/profile/edit"),
   userProfileNotification("/user/profile/notification"),
+  userProfileDelete("/user/profile/delete"),
   userProfileLanguage("/user/profile/language"),
   ;
 
