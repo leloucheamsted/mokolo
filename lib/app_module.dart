@@ -3,6 +3,7 @@ import 'package:mokolo/modules/cart/cart.module.dart';
 import 'package:mokolo/modules/core/layout/layout.module.dart';
 import 'package:mokolo/modules/home/home.module.dart';
 import 'package:mokolo/modules/notifications/notifications.module.dart';
+import 'package:mokolo/modules/orders/orders.module.dart';
 import 'package:mokolo/modules/search/search.module.dart';
 import 'package:mokolo/modules/shipping/shipping.module.dart';
 import 'package:mokolo/modules/user/auth.module.dart';
@@ -33,6 +34,7 @@ class AppModule extends Module {
     ModuleRoute(AppRoute.layout.path, module: LayoutModule()),
     ModuleRoute(AppRoute.home.path, module: HomeModule()),
     ModuleRoute(AppRoute.home.path, module: SearchModule()),
+    ModuleRoute(AppRoute.orders.path, module: OrdersModule()),
     ModuleRoute(AppRoute.user.path, module: UserModule()),
     ModuleRoute(AppRoute.cart.path, module: CartModule()),
     ModuleRoute(AppRoute.shipping.path, module: ShippingModule()),

@@ -153,6 +153,8 @@ class TabList {
 class ImagesName {
   static const String mokolo = 'assets/images/mokolo.png';
   static const String photo = 'assets/images/photo.png';
+  static const String mtn = 'assets/images/mtn.png';
+  static const String orange = 'assets/images/orange.png';
   static const String map = 'assets/images/map.png';
   static const String apple = 'assets/images/apple.png';
   static const String onboardingstep1 = 'assets/images/onboardingstep1.png';
@@ -172,6 +174,9 @@ class IconsName {
   static const String gb = 'assets/icons/gb.svg';
   static const String fr = 'assets/icons/fr.svg';
   static const String alert = 'assets/icons/alert.svg';
+  static const String shop = 'assets/icons/shop.svg';
+  static const String inprogress = 'assets/icons/inprogress.svg';
+  static const String noorders = 'assets/icons/noorders.svg';
 
   static const String addressHome = 'assets/icons/address_home.svg';
   static const String building = 'assets/icons/building.svg';

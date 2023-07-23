@@ -22,6 +22,9 @@ enum AppRoute {
 
   search("/search/"),
 
+  orders("/orders"),
+  orderdetail("/orders/detail"),
+
   user("/user/"),
   userProfileCurrent("/user/profile"),
   userProfileEdit("/user/profile/edit"),
