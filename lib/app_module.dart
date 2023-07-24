@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mokolo/modules/cart/cart.module.dart';
+import 'package:mokolo/modules/checkout/checkout.module.dart';
 import 'package:mokolo/modules/core/layout/layout.module.dart';
 import 'package:mokolo/modules/home/home.module.dart';
 import 'package:mokolo/modules/notifications/notifications.module.dart';
@@ -35,6 +36,7 @@ class AppModule extends Module {
     ModuleRoute(AppRoute.home.path, module: HomeModule()),
     ModuleRoute(AppRoute.home.path, module: SearchModule()),
     ModuleRoute(AppRoute.orders.path, module: OrdersModule()),
+    ModuleRoute(AppRoute.checkout.path, module: CheckoutModule()),
     ModuleRoute(AppRoute.user.path, module: UserModule()),
     ModuleRoute(AppRoute.cart.path, module: CartModule()),
     ModuleRoute(AppRoute.shipping.path, module: ShippingModule()),

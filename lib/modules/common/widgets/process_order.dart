@@ -153,7 +153,7 @@ class _ProcessOrderState extends State<ProcessOrder> {
         ActionButton(
             title: 'Proceed',
             onPressed: () {
-              Modular.to.pushNamed(AppRoute.shipping.path);
+              Modular.to.pushNamed(AppRoute.paymentsuccess.path);
             },
             width: MediaQuery.of(context).size.width / 2)
       ],

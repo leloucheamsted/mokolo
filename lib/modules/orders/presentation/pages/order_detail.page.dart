@@ -245,15 +245,15 @@ class OrderDetailPage extends StatelessWidget {
   }
 
   Widget _paymentInfo() {
-    return const Padding(
-      padding: EdgeInsets.symmetric(
+    return Padding(
+      padding: const EdgeInsets.symmetric(
           horizontal: LayoutConstants.paddingXlarge,
           vertical: LayoutConstants.paddingMedium),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Text(
+          const Text(
             'Payment Information',
             textAlign: TextAlign.start,
             style: TextStyle(
@@ -264,8 +264,8 @@ class OrderDetailPage extends StatelessWidget {
                 fontSize: FontsSize.medium,
                 fontFamily: Fonts.bold),
           ),
-          SizedBox(height: LayoutConstants.spacingMedium),
-          Padding(
+          const SizedBox(height: LayoutConstants.spacingMedium),
+          const Padding(
             padding: EdgeInsets.symmetric(
                 vertical: LayoutConstants.paddingSmall - 2),
             child: Row(
@@ -296,7 +296,7 @@ class OrderDetailPage extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(
                 vertical: LayoutConstants.paddingSmall - 2),
             child: Row(
@@ -327,7 +327,7 @@ class OrderDetailPage extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(
                 vertical: LayoutConstants.paddingSmall - 2),
             child: Row(
@@ -358,7 +358,7 @@ class OrderDetailPage extends StatelessWidget {
               ],
             ),
           ),
-          Padding(
+          const Padding(
             padding: EdgeInsets.symmetric(
                 vertical: LayoutConstants.paddingSmall - 2),
             child: Row(
@@ -390,12 +390,12 @@ class OrderDetailPage extends StatelessWidget {
             ),
           ),
           Padding(
-            padding: EdgeInsets.symmetric(
+            padding: const EdgeInsets.symmetric(
                 vertical: LayoutConstants.paddingSmall - 2),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
+                const Text(
                   'Payment',
                   textAlign: TextAlign.start,
                   style: TextStyle(
@@ -406,22 +406,40 @@ class OrderDetailPage extends StatelessWidget {
                       fontSize: FontsSize.medium,
                       fontFamily: Fonts.medium),
                 ),
-                Text(
-                  'XAF 5,000',
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                      color: ColorPalette.greyScale900,
-                      fontStyle: FontStyle.normal,
-                      fontWeight: FontWeight.w600,
-                      letterSpacing: 0.1,
-                      fontSize: FontsSize.medium,
-                      fontFamily: Fonts.bold),
+                Row(
+                  children: [
+                    Container(
+                      height: 16,
+                      width: 16,
+                      decoration: BoxDecoration(
+                        borderRadius:
+                            BorderRadius.circular(LayoutConstants.radiusSmall),
+                        image: const DecorationImage(
+                          image: AssetImage(ImagesName.orange),
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+                      child: null,
+                    ),
+                    const SizedBox(width: LayoutConstants.spacingXsmall),
+                    const Text(
+                      'Orange money',
+                      textAlign: TextAlign.start,
+                      style: TextStyle(
+                          color: ColorPalette.greyScale900,
+                          fontStyle: FontStyle.normal,
+                          fontWeight: FontWeight.w600,
+                          letterSpacing: 0.1,
+                          fontSize: FontsSize.medium,
+                          fontFamily: Fonts.bold),
+                    ),
+                  ],
                 ),
               ],
             ),
           ),
-          Divider(thickness: 1, color: ColorPalette.greyScale200),
-          Padding(
+          const Divider(thickness: 1, color: ColorPalette.greyScale200),
+          const Padding(
             padding: EdgeInsets.symmetric(
                 vertical: LayoutConstants.paddingSmall - 2),
             child: Row(

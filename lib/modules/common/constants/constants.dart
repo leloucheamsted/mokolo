@@ -163,7 +163,11 @@ class ImagesName {
 }
 
 class IconsName {
+  static const String mobile = 'assets/icons/mobile.svg';
   static const String back = 'assets/icons/back.svg';
+  static const String chevronDown = 'assets/icons/chevron-down.svg';
+  static const String paymentsuccess = 'assets/icons/paymentsuccess.svg';
+
   static const String user = 'assets/icons/user.svg';
   static const String message = 'assets/icons/message.svg';
   static const String map1 = 'assets/icons/map1.svg';

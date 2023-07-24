@@ -25,6 +25,10 @@ enum AppRoute {
   orders("/orders"),
   orderdetail("/orders/detail"),
 
+  checkout("/payment/"),
+  newpayment("/payment/new"),
+  paymentsuccess("/payment/success"),
+
   user("/user/"),
   userProfileCurrent("/user/profile"),
   userProfileEdit("/user/profile/edit"),
