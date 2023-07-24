@@ -4,7 +4,6 @@ import 'package:mokolo/modules/common/widgets/widgets.dart';
 
 import '../../../common/constants/constants.dart';
 import '../../../common/constants/layout_constants.dart';
-import '../../../common/widgets/appBar/back_title_app_bar.dart';
 
 class DeleteAccountPage extends StatefulWidget {
   const DeleteAccountPage({super.key});
@@ -105,6 +104,7 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
                         children: [
                           SvgPicture.asset(
                             IconsName.alert,
+                            // ignore: deprecated_member_use
                             color: ColorPalette.secondaryBase,
                           ),
                           const SizedBox(width: LayoutConstants.spacingXsmall),

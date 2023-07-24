@@ -9,7 +9,6 @@ import 'package:mokolo/modules/search/search.module.dart';
 import 'package:mokolo/modules/shipping/shipping.module.dart';
 import 'package:mokolo/modules/user/auth.module.dart';
 import 'package:mokolo/modules/user/onboarding.module.dart';
-import 'package:mokolo/routes/app_down_page.dart';
 import 'package:mokolo/routes/nav_observer.dart';
 import 'modules/core/core.module.dart';
 import 'modules/splash/blocs/splash_bloc.dart';

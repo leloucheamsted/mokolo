@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:mokolo/modules/common/widgets/appBar/app_bar.dart';
 import 'package:mokolo/modules/home/presentation/pages/ui/shop_item.dart';
 import 'package:mokolo/modules/home/presentation/pages/ui/home_app_bar.dart';
 
@@ -16,33 +17,42 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
           automaticallyImplyLeading: false,
-          toolbarHeight: LayoutConstants.appBarSize,
-          flexibleSpace: const HomeAppBar()),
+          toolbarHeight: 30,
+          flexibleSpace: const BlankAppBar()),
       body: SafeArea(
           child: connexionError
               ? Padding(
                   padding: const EdgeInsets.fromLTRB(
                       LayoutConstants.paddingXlarge,
-                      LayoutConstants.paddingXlarge,
+                      0,
                       LayoutConstants.paddingXlarge,
                       0),
-                  child: MediaQuery.removeViewPadding(
-                    context: context,
-                    removeTop: true,
-                    child: GridView.builder(
-                        itemCount: 16,
-                        scrollDirection: Axis.vertical,
-                        shrinkWrap: true,
-                        primary: false,
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 3,
-                          mainAxisSpacing: LayoutConstants.spacingLarge,
-                          crossAxisSpacing: LayoutConstants.spacingMedium,
+                  child: Column(
+                    children: [
+                      const HomeAppBar(),
+                      const SizedBox(height: LayoutConstants.spacingMedium),
+                      Expanded(
+                        child: MediaQuery.removeViewPadding(
+                          context: context,
+                          removeTop: true,
+                          child: GridView.builder(
+                              itemCount: 9,
+                              scrollDirection: Axis.vertical,
+                              shrinkWrap: true,
+                              primary: false,
+                              gridDelegate:
+                                  const SliverGridDelegateWithFixedCrossAxisCount(
+                                crossAxisCount: 3,
+                                mainAxisSpacing: LayoutConstants.spacingLarge,
+                                crossAxisSpacing: LayoutConstants.spacingMedium,
+                              ),
+                              itemBuilder: (_, index) {
+                                return const ShopItem();
+                              }),
                         ),
-                        itemBuilder: (_, index) {
-                          return const ShopItem();
-                        }),
+                      ),
+                      _requestStore()
+                    ],
                   ),
                 )
               : _connexionError()),
@@ -55,7 +65,7 @@ class HomePage extends StatelessWidget {
       child: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          crossAxisAlignment: CrossAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             SvgPicture.asset(IconsName.noconnexion),
             const SizedBox(height: LayoutConstants.spacingBig),
@@ -82,6 +92,66 @@ class HomePage extends StatelessWidget {
             ActionButton(title: 'Try Again', width: 150, onPressed: () {})
           ],
         ),
+      ),
+    );
+  }
+
+  Widget _requestStore() {
+    return Container(
+      padding: const EdgeInsets.all(LayoutConstants.paddingLarge),
+      decoration: BoxDecoration(
+        color: ColorPalette.greyScale50,
+        borderRadius: BorderRadius.circular(LayoutConstants.radiusMedium + 2),
+      ),
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.start,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: [
+          const Text(
+            'Can’t find a store?',
+            style: TextStyle(
+              color: ColorPalette.greyScale900,
+              fontWeight: FontWeight.w600,
+              fontFamily: Fonts.bold,
+              fontSize: FontsSize.large,
+              letterSpacing: 0.2,
+            ),
+          ),
+          const SizedBox(height: LayoutConstants.spacingSmall),
+          const Text(
+            'Submit your preffered store to our team, we would review and add it the list of stores.',
+            style: TextStyle(
+              color: ColorPalette.greyScale400,
+              fontWeight: FontWeight.w600,
+              fontFamily: Fonts.medium,
+              fontSize: FontsSize.medium,
+              letterSpacing: 0.2,
+            ),
+          ),
+          const SizedBox(height: LayoutConstants.spacingLarge),
+          Container(
+            padding: const EdgeInsets.all(LayoutConstants.paddingLarge),
+            alignment: Alignment.center,
+            decoration: BoxDecoration(
+              border: Border.all(
+                width: 1,
+                color: ColorPalette.greyScale300,
+              ),
+              borderRadius: BorderRadius.circular(LayoutConstants.radiusBig),
+            ),
+            child: const Text(
+              'Request a new store',
+              textAlign: TextAlign.start,
+              style: TextStyle(
+                  color: ColorPalette.primaryBase,
+                  fontStyle: FontStyle.normal,
+                  fontWeight: FontWeight.w500,
+                  letterSpacing: 0.2,
+                  fontSize: FontsSize.large,
+                  fontFamily: Fonts.medium),
+            ),
+          ),
+        ],
       ),
     );
   }

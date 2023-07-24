@@ -80,6 +80,7 @@ class LanguageProfilePage extends StatelessWidget {
             ),
             child: SizedBox(
               child: isChoice
+                  // ignore: deprecated_member_use
                   ? SvgPicture.asset(IconsName.check, color: ColorPalette.white)
                   : null,
             ),
