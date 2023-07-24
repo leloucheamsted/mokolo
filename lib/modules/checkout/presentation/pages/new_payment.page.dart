@@ -5,6 +5,7 @@ import 'package:mokolo/modules/common/constants/constants.dart';
 import 'package:mokolo/modules/common/widgets/widgets.dart';
 import 'package:dropdown_button2/dropdown_button2.dart';
 import '../../../common/constants/layout_constants.dart';
+import 'ui/dropdown_file.dart';
 import 'ui/input_phone.dart';
 
 class NewPaymentPage extends StatefulWidget {
@@ -16,16 +17,7 @@ class NewPaymentPage extends StatefulWidget {
 
 class _NewPaymentPageState extends State<NewPaymentPage> {
   String? selectedValue;
-  List<String> items = [
-    'Item1',
-    'Item2',
-    'Item3',
-    'Item4',
-    'Item5',
-    'Item6',
-    'Item7',
-    'Item8',
-  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,51 +36,7 @@ class _NewPaymentPageState extends State<NewPaymentPage> {
               Expanded(
                 child: Column(
                   children: [
-                    Container(
-                      height: LayoutConstants.actionBtnHeight,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 1,
-                          color: ColorPalette.greyScale200,
-                        ),
-                        borderRadius:
-                            BorderRadius.circular(LayoutConstants.radiusBig),
-                      ),
-                      child: Padding(
-                        padding:
-                            const EdgeInsets.all(LayoutConstants.paddingMedium),
-                        child: Row(children: [
-                          Container(
-                            height: 30,
-                            width: 30,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(
-                                  LayoutConstants.radiusMedium),
-                              image: const DecorationImage(
-                                image: AssetImage(ImagesName.orange),
-                                fit: BoxFit.cover,
-                              ),
-                            ),
-                            child: null,
-                          ),
-                          const SizedBox(width: LayoutConstants.spacingMedium),
-                          const Expanded(
-                            child: Text(
-                              'Orange Money',
-                              textAlign: TextAlign.start,
-                              style: TextStyle(
-                                  color: ColorPalette.greyScale900,
-                                  fontStyle: FontStyle.normal,
-                                  fontWeight: FontWeight.w600,
-                                  letterSpacing: 0.1,
-                                  fontSize: FontsSize.medium,
-                                  fontFamily: Fonts.bold),
-                            ),
-                          ),
-                          SvgPicture.asset(IconsName.chevronRight)
-                        ]),
-                      ),
-                    ),
+                    _customDrop(),
                     const SizedBox(height: LayoutConstants.spacingMedium),
                     const InputPhone(),
                   ],
@@ -99,6 +47,96 @@ class _NewPaymentPageState extends State<NewPaymentPage> {
           ),
         ),
       ),
+    );
+  }
+
+  Widget _customDrop() {
+    return CustomDropdown<int>(
+      onChange: (int value, int index) => print(value),
+      dropdownButtonStyle: const DropdownButtonStyle(
+        width: 170,
+        height: 40,
+        elevation: 1,
+        backgroundColor: Colors.white,
+        primaryColor: Colors.black87,
+      ),
+      dropdownStyle: DropdownStyle(
+        borderRadius: BorderRadius.circular(8),
+        elevation: 6,
+        padding: const EdgeInsets.all(5),
+      ),
+      items: [
+        'Orange money',
+        'MTN MOMO',
+      ]
+          .asMap()
+          .entries
+          .map(
+            (item) => DropdownItem<int>(
+              value: item.key + 1,
+              child: Row(children: [
+                Container(
+                  height: 30,
+                  width: 30,
+                  decoration: BoxDecoration(
+                    borderRadius:
+                        BorderRadius.circular(LayoutConstants.radiusMedium),
+                    image: DecorationImage(
+                      image: AssetImage(
+                          item.key == 0 ? ImagesName.orange : ImagesName.mtn),
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                  child: null,
+                ),
+                const SizedBox(width: LayoutConstants.spacingMedium),
+                Text(
+                  item.value,
+                  textAlign: TextAlign.start,
+                  style: const TextStyle(
+                      color: ColorPalette.greyScale900,
+                      fontStyle: FontStyle.normal,
+                      fontWeight: FontWeight.w600,
+                      letterSpacing: 0.1,
+                      fontSize: FontsSize.medium,
+                      fontFamily: Fonts.bold),
+                ),
+              ]),
+            ),
+          )
+          .toList(),
+      child: _placehoderDrop(),
+    );
+  }
+
+  Widget _placehoderDrop() {
+    return Expanded(
+      child: Row(children: [
+        Container(
+          height: 30,
+          width: 30,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(LayoutConstants.radiusMedium),
+            image: const DecorationImage(
+              image: AssetImage(ImagesName.orange),
+              fit: BoxFit.cover,
+            ),
+          ),
+          child: null,
+        ),
+        const SizedBox(width: LayoutConstants.spacingMedium),
+        const Text(
+          'Orange Money',
+          textAlign: TextAlign.start,
+          style: TextStyle(
+              color: ColorPalette.greyScale900,
+              fontStyle: FontStyle.normal,
+              fontWeight: FontWeight.w600,
+              letterSpacing: 0.1,
+              fontSize: FontsSize.medium,
+              fontFamily: Fonts.bold),
+        ),
+      ]),
     );
   }
 }

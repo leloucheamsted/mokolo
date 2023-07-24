@@ -5,6 +5,7 @@ enum AppRoute {
 
   auth("/auth/"),
   otp("/auth/otp/"),
+  addinfo("/auth/addinfo/"),
 
   layout('/layout/'),
 

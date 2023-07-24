@@ -1,4 +1,5 @@
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:mokolo/modules/user/presentation/auth/pages/additional_information.page.dart';
 import 'package:mokolo/modules/user/presentation/auth/pages/otp_page.dart';
 import 'package:mokolo/modules/user/presentation/auth/pages/phone_input_page.dart';
 
@@ -12,6 +13,8 @@ class AuthModule extends Module {
         ChildRoute(AppRoute.auth.pathAsChild,
             child: (context, args) => const PhoneInputPage()),
         ChildRoute(AppRoute.otp.pathAsChild,
-            child: (context, args) => const OtpPage())
+            child: (context, args) => const OtpPage()),
+        ChildRoute(AppRoute.addinfo.pathAsChild,
+            child: (context, args) => const AdditionalInformationPage())
       ];
 }

@@ -96,7 +96,7 @@ class _OtpPageState extends State<OtpPage> {
                     ActionButton(
                         title: 'Continue',
                         onPressed: () =>
-                            {Modular.to.pushNamed(AppRoute.layout.path)})
+                            {Modular.to.pushNamed(AppRoute.addinfo.path)})
                   ],
                 ),
               ),
