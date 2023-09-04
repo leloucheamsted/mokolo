@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/user/presentation/pages/ui/setting_item.dart';
 
 import '../../../../routes/app_routes.enum.dart';

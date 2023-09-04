@@ -1,3 +1,5 @@
+// ignore_for_file: deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
@@ -15,7 +17,6 @@ class RecentSearchItem extends StatelessWidget {
         //mainAxisAlignment: MainAxisAlignment.spaceBetween,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          // ignore: deprecated_member_use
           SvgPicture.asset(IconsName.clock, color: ColorPalette.greyScale400),
           const SizedBox(width: LayoutConstants.spacingSmall),
           const Text(

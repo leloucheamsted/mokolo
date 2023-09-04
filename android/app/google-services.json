@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "107720938859",
+    "project_id": "mokolo-352708",
+    "storage_bucket": "mokolo-352708.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:107720938859:android:34101ae1f7e680ae9b682e",
+        "android_client_info": {
+          "package_name": "com.mokolo.shoppa"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "107720938859-q4kkp1cm2tnjb2mea2m2teo6ittap264.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQGCv9IRdVGEBqTSYhzW5U844ixzSK2AA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "107720938859-q4kkp1cm2tnjb2mea2m2teo6ittap264.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

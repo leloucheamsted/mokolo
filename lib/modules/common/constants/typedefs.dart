@@ -1,3 +1,3 @@
 import 'package:flutter/widgets.dart';
 
-typedef Widget WidgetWrapBuilder(Widget child);
+typedef WidgetWrapBuilder = Widget Function(Widget child);

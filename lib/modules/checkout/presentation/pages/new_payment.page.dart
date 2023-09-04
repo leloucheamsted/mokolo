@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:mokolo/modules/checkout/presentation/pages/ui/payment_method_item.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
 import 'package:mokolo/modules/common/widgets/widgets.dart';
-import 'package:dropdown_button2/dropdown_button2.dart';
 import '../../../common/constants/layout_constants.dart';
 import 'ui/dropdown_file.dart';
 import 'ui/input_phone.dart';
@@ -52,7 +49,7 @@ class _NewPaymentPageState extends State<NewPaymentPage> {
 
   Widget _customDrop() {
     return CustomDropdown<int>(
-      onChange: (int value, int index) => print(value),
+      onChange: (int value, int index) => debugPrint(value.toString()),
       dropdownButtonStyle: const DropdownButtonStyle(
         width: 170,
         height: 40,

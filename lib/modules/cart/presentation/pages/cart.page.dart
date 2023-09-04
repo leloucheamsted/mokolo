@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/cart/presentation/pages/ui/cart_item.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
 import 'package:mokolo/modules/common/widgets/widgets.dart';
 
-import '../../../../routes/app_routes.enum.dart';
 import '../../../common/constants/layout_constants.dart';
 
 class CartPage extends StatefulWidget {
@@ -98,6 +96,7 @@ class _CartPageState extends State<CartPage> {
     );
   }
 
+  // ignore: unused_element
   Widget _emptyCart() {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,

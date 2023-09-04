@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
 import 'package:mokolo/modules/common/widgets/appBar/app_bar.dart';
 
 import '../../../common/constants/layout_constants.dart';
-import '../../../common/widgets/appBar/back_custom_app_bar.dart';
 import 'ui/notification_item.dart';
 
 class NotificationPage extends StatelessWidget {

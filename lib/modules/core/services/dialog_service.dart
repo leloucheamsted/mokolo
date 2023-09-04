@@ -7,7 +7,8 @@ class DialogService {
 
   // const DialogService._();
   // static BuildContext get _context => navigationKey.currentContext!;
-  static BuildContext get _context => navigationKey.currentState!.overlay!.context;
+  static BuildContext get _context =>
+      navigationKey.currentState!.overlay!.context;
   // factory DialogService.alert(String content, {Key? key}) => DialogService._().simpleAlert();
   static showToast({required String msg, Duration? duration}) {
     ScaffoldMessenger.of(_context).showSnackBar(SnackBar(
@@ -26,7 +27,8 @@ class DialogService {
     // _textInputCtrl?.dispose();
   }
 
-  static Future<String?> showTextInputDialog({String? title, String? hint, String? defaultValue}) async {
+  static Future<String?> showTextInputDialog(
+      {String? title, String? hint, String? defaultValue}) async {
     closeLoading();
     final Future<String?> res = showDialog(
         context: _context,
@@ -41,7 +43,7 @@ class DialogService {
             ),
             actions: <Widget>[
               ElevatedButton(
-                child: Text("Cancel"),
+                child: const Text("Cancel"),
                 onPressed: () => Navigator.pop(context),
               ),
               ElevatedButton(
@@ -114,14 +116,13 @@ class DialogService {
 
   static Future<bool?> _showWidget({
     required Widget child,
-    BuildContext? context,
   }) async {
     return showDialog<bool>(
         context: _context,
         // context: context ?? navigationKey.currentContext!,
         barrierDismissible: false, // user must tap button for close dialog!
         builder: (BuildContext context) {
-          return SimpleDialog(
+          return const SimpleDialog(
             elevation: 0.0,
             backgroundColor: Colors.transparent,
             children: <Widget>[
@@ -129,10 +130,6 @@ class DialogService {
                 child: CircularProgressIndicator(),
               )
             ],
-          );
-          return AlertDialog(
-            // title: Text("Alert Dialog"),
-            content: child,
           );
         });
   }

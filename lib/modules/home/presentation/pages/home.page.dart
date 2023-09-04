@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/common/widgets/appBar/app_bar.dart';
 import 'package:mokolo/modules/home/presentation/pages/ui/shop_item.dart';
@@ -7,9 +8,29 @@ import 'package:mokolo/modules/home/presentation/pages/ui/home_app_bar.dart';
 import '../../../common/constants/constants.dart';
 import '../../../common/constants/layout_constants.dart';
 import '../../../common/widgets/buttons/action_button.dart';
+import '../bloc/fetch_store_list.bloc.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class HomePage extends StatefulWidget {
+  const HomePage({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late final FetchStoreListBloc bloc = Modular.get();
+
+  @override
+  void initState() {
+    _loadData();
+    super.initState();
+  }
+
+  void _loadData() {
+    bloc.loadData();
+  }
 
   @override
   Widget build(BuildContext context) {

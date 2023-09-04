@@ -11,6 +11,7 @@ class AppDownPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // final String currentRoute =Modular.to.navigateHistory.map((e) => e.name).toList().join("\n");
+    // ignore: unused_local_variable
     final String currentRoute = Modular.to.path;
     return Scaffold(
       backgroundColor: ColorPalette.white,

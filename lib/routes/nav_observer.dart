@@ -52,6 +52,7 @@ class NavObserver extends RouteObserver<PageRoute> {
   // String? get triggeredFullPath => _triggeredFullPath;
 
   void _addRoute(Route<dynamic> route) {
+    // ignore: unused_local_variable
     final RouteSettings routeSettings = route.settings;
     routeStack.add(route);
 

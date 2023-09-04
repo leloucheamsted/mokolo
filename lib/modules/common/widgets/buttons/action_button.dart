@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
 import 'package:mokolo/modules/common/constants/layout_constants.dart';
@@ -8,7 +7,7 @@ class ActionButton extends StatelessWidget {
   final double? width;
   final Color? color;
   final VoidCallback onPressed;
-  ActionButton(
+  const ActionButton(
       {super.key,
       required this.title,
       required this.onPressed,

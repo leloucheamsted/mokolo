@@ -2,8 +2,6 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mokolo/modules/checkout/presentation/pages/checkout.page.dart';
 import 'package:mokolo/modules/checkout/presentation/pages/new_payment.page.dart';
 import 'package:mokolo/modules/checkout/presentation/pages/payment_succes.page.dart';
-import 'package:mokolo/modules/notifications/presentation/pages/notifications.page.dart';
-import 'package:mokolo/modules/orders/presentation/pages/order_detail.page.dart';
 import 'package:mokolo/routes/app_routes.enum.dart';
 
 class CheckoutModule extends Module {

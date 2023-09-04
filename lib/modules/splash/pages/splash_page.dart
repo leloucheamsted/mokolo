@@ -38,17 +38,21 @@ class _SplashPageState extends State<SplashPage> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: GestureDetector(
-        onTap: (){
+        onTap: () {
           Modular.to.pushNamed(AppRoute.onboarding.path);
         },
         child: Material(
           color: Colors.white,
           child: Center(
             child: SizedBox(
-              height: 150,
+              height: 300,
               // width: 50,
               // color: AppTheme().colors.mainBackground,
-              child: Image.asset(ImagesName.mokolo),
+              child: Image.asset(
+                ImagesName.shoppa,
+                width: 300,
+                height: 300,
+              ),
             ),
           ),
         ),

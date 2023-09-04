@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
     <application
-        android:label="mokolo"
+        android:label="shoppa"
         android:name="${applicationName}"
-        android:icon="@mipmap/ic_launcher">
+        android:icon="@mipmap/shoppa">
          <meta-data android:name="com.google.android.geo.API_KEY"
                android:value="AIzaSyArjVizDDrADsY50cF3LG1DmWGHjnNOJa0"/>
         <activity
@@ -33,4 +33,6 @@
             android:name="flutterEmbedding"
             android:value="2" />
     </application>
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.QUERY_ALL_PACKAGES"/>
 </manifest>

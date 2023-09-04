@@ -20,7 +20,8 @@ class ActionState<T> {
   ActionState.initial() : status = ActionStateStatus.INITIAL;
   ActionState.loading() : status = ActionStateStatus.LOADING;
   ActionState.completed(this.data) : status = ActionStateStatus.COMPLETED;
-  ActionState.error(this.error, {this.exception, this.code, this.stackTrace}) : status = ActionStateStatus.ERROR {
+  ActionState.error(this.error, {this.exception, this.code, this.stackTrace})
+      : status = ActionStateStatus.ERROR {
     log(error.toString(), stackTrace: stackTrace, error: error);
   }
 
@@ -30,4 +31,5 @@ class ActionState<T> {
   }
 }
 
+// ignore: constant_identifier_names
 enum ActionStateStatus { INITIAL, LOADING, COMPLETED, ERROR }

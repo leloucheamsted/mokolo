@@ -11,7 +11,7 @@ class BackCustomAppBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(Platform.operatingSystem);
+    debugPrint(Platform.operatingSystem);
 
     return Container(
       padding: const EdgeInsets.symmetric(

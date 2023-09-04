@@ -1,3 +1,5 @@
+// ignore_for_file: constant_identifier_names, non_constant_identifier_names
+
 import 'dart:async';
 import 'dart:io';
 
@@ -112,7 +114,8 @@ class DataConnectionCheckService implements IConnectivityService {
     };
   }
 
-  static final DataConnectionCheckService _instance = DataConnectionCheckService._();
+  static final DataConnectionCheckService _instance =
+      DataConnectionCheckService._();
 
   List<AddressCheckOptions> get currentAddresses => addresses;
 
@@ -183,7 +186,8 @@ class DataConnectionCheckService implements IConnectivityService {
         }
         if (requests.isNotEmpty) {
           _lastTryResults = List.unmodifiable(await Future.wait(requests));
-          result = _lastTryResults.map((result) => result.isSuccess).contains(true);
+          result =
+              _lastTryResults.map((result) => result.isSuccess).contains(true);
         }
         if (!result) {
           _disconnectionStatus = DisconnectionStatus.noInternet;
@@ -195,8 +199,10 @@ class DataConnectionCheckService implements IConnectivityService {
     } else {
       try {
         final startTime = DateTime.now();
-        final response =
-            await http.get(Uri.parse("${serviceAddress!.address}/${serviceAddress!.method}")).timeout(DEFAULT_TIMEOUT);
+        final response = await http
+            .get(Uri.parse(
+                "${serviceAddress!.address}/${serviceAddress!.method}"))
+            .timeout(DEFAULT_TIMEOUT);
 
         final diff = DateTime.now().difference(startTime).inMilliseconds;
         if (response.statusCode == 200) {
@@ -221,7 +227,9 @@ class DataConnectionCheckService implements IConnectivityService {
   /// [DataConnectionStatus.connected].
   /// [DataConnectionStatus.disconnected] otherwise.
   Future<DataConnectionStatus> get connectionStatus async {
-    return await hasConnection ? DataConnectionStatus.connected : DataConnectionStatus.disconnected;
+    return await hasConnection
+        ? DataConnectionStatus.connected
+        : DataConnectionStatus.disconnected;
   }
 
   /// Initiates a request to each address in [addresses].
@@ -236,10 +244,11 @@ class DataConnectionCheckService implements IConnectivityService {
       _disconnectionStatus = DisconnectionStatus.noConnectivity;
       return false;
     }*/
-    final DataConnectionStatus status = await connectionStatus.timeout(const Duration(seconds: 10), onTimeout: () {
+    final DataConnectionStatus status = await connectionStatus
+        .timeout(const Duration(seconds: 10), onTimeout: () {
       return DataConnectionStatus.disconnected;
     });
-    ;
+
     return status == DataConnectionStatus.connected;
   }
 
@@ -273,11 +282,15 @@ class DataConnectionCheckService implements IConnectivityService {
     //}
 
     if (_disconnectionStatus == DisconnectionStatus.noConnectivity) {
-      _recoveryDurationInSeconds = DEFAULT_INTERVAL.inSeconds + (DEFAULT_TIMEOUT.inSeconds * 2);
+      _recoveryDurationInSeconds =
+          DEFAULT_INTERVAL.inSeconds + (DEFAULT_TIMEOUT.inSeconds * 2);
     } else if (_disconnectionStatus == DisconnectionStatus.noInternet) {
-      _recoveryDurationInSeconds = (DEFAULT_INTERVAL.inSeconds + (DEFAULT_TIMEOUT.inSeconds * 2) * 1.5).round();
+      _recoveryDurationInSeconds =
+          (DEFAULT_INTERVAL.inSeconds + (DEFAULT_TIMEOUT.inSeconds * 2) * 1.5)
+              .round();
     } else if (_disconnectionStatus == DisconnectionStatus.noService) {
-      _recoveryDurationInSeconds = DEFAULT_INTERVAL.inSeconds + (DEFAULT_TIMEOUT.inSeconds * 2) * 2;
+      _recoveryDurationInSeconds =
+          DEFAULT_INTERVAL.inSeconds + (DEFAULT_TIMEOUT.inSeconds * 2) * 2;
     }
 
     // only send status update if last status differs from current
@@ -302,7 +315,8 @@ class DataConnectionCheckService implements IConnectivityService {
   Timer? _timerHandle;
 
   // controller for the exposed 'onStatusChange' Stream
-  StreamController<DataConnectionStatus> _statusController = StreamController.broadcast();
+  final StreamController<DataConnectionStatus> _statusController =
+      StreamController.broadcast();
 
   /// Subscribe to this stream to receive events whenever the
   /// [DataConnectionStatus] changes. When a listener is attached
@@ -366,11 +380,12 @@ class DataConnectionCheckService implements IConnectivityService {
   bool get isActivelyChecking => _statusController.hasListener;
 
   @override
-  Future<bool> get isConnected =>
-      _statusController.stream.first.then((value) => value == DataConnectionStatus.connected);
+  Future<bool> get isConnected => _statusController.stream.first
+      .then((value) => value == DataConnectionStatus.connected);
 
   @override
-  Stream<bool> get statusStream => _statusController.stream.map((value) => value == DataConnectionStatus.connected);
+  Stream<bool> get statusStream => _statusController.stream
+      .map((value) => value == DataConnectionStatus.connected);
 }
 
 /// This class should be pretty self-explanatory.

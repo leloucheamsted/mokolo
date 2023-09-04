@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
-import 'package:mokolo/modules/common/widgets/widgets.dart';
 
 import '../../../../../routes/app_routes.enum.dart';
 import '../../../../common/constants/layout_constants.dart';

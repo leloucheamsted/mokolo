@@ -1,0 +1,7 @@
+{
+    "language":"French",
+    "@language":{
+        "description":"La Langue courante"
+    },
+    "HelloWorld:"Bonjour le monde"
+}

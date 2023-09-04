@@ -1,11 +1,8 @@
 import 'package:flutter_modular/flutter_modular.dart';
 
-import '../../routes/nav_observer.dart';
-
-import 'blocs/app_state_bloc.dart';
 import 'error/failure.dart';
-import 'services/interfaces/iconnectivity_service.dart';
 
+// ignore: unused_element
 ServerFailure _serverFailurerMapper(dynamic response) {
   try {
     if (response.data == "") {
@@ -37,7 +34,5 @@ ServerFailure _serverFailurerMapper(dynamic response) {
 
 class CoreModule extends Module {
   @override
-  List<Bind> get binds => [
-       
-      ];
+  List<Bind> get binds => [];
 }

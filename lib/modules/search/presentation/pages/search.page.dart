@@ -1,3 +1,5 @@
+// ignore_for_file: unused_element
+
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/common/widgets/widgets.dart';
@@ -7,7 +9,6 @@ import 'package:mokolo/modules/search/presentation/pages/ui/search_bar.dart';
 
 import '../../../common/constants/constants.dart';
 import '../../../common/constants/layout_constants.dart';
-import '../../../common/widgets/appBar/back_custom_app_bar.dart';
 
 class SearchPage extends StatefulWidget {
   const SearchPage({super.key});
@@ -48,7 +49,7 @@ class _SearchPageState extends State<SearchPage> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              SearchBarUi(),
+              const SearchBarUi(),
               const SizedBox(height: LayoutConstants.spacingLarge),
               _noResult(),
 

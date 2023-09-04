@@ -1,12 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_switch/flutter_switch.dart';
-import 'package:mokolo/modules/user/presentation/pages/ui/setting_item.dart';
 
-import '../../../../routes/app_routes.enum.dart';
 import '../../../common/constants/constants.dart';
 import '../../../common/constants/layout_constants.dart';
-import '../../../common/widgets/appBar/back_custom_app_bar.dart';
 import '../../../common/widgets/appBar/back_title_app_bar.dart';
 
 class NotificationSettingPage extends StatefulWidget {

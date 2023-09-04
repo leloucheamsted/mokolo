@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:flutter_svg/svg.dart';
@@ -142,7 +141,7 @@ class OrderItem extends StatelessWidget {
             const SizedBox(height: LayoutConstants.spacingMedium),
             Column(
               children: [
-                Divider(thickness: 1, color: ColorPalette.greyScale200),
+                const Divider(thickness: 1, color: ColorPalette.greyScale200),
                 Padding(
                   padding: const EdgeInsets.symmetric(
                       vertical: LayoutConstants.spacingSmall),
@@ -186,7 +185,7 @@ class OrderItem extends StatelessWidget {
                           fontSize: FontsSize.small,
                           fontFamily: Fonts.medium),
                     ),
-                    const SizedBox(height: LayoutConstants.spacingSmall),
+                    SizedBox(height: LayoutConstants.spacingSmall),
                     Text(
                       'XAF 100,000',
                       style: TextStyle(

@@ -20,13 +20,15 @@ class NewAddressPage extends StatefulWidget {
 class _NewAddressPageState extends State<NewAddressPage> {
   final Completer<GoogleMapController> _controller =
       Completer<GoogleMapController>();
-  final Set<Marker> _markers = new Set();
-  static const LatLng _mainLocation = const LatLng(25.69893, 32.6421);
+  final Set<Marker> _markers = {};
+  static const LatLng _mainLocation = LatLng(25.69893, 32.6421);
 
+  // ignore: unused_field
   static const CameraPosition _kGooglePlex = CameraPosition(
     target: LatLng(37.42796133580664, -122.085749655962),
     zoom: 14.4746,
   );
+  // ignore: unused_field
   static const CameraPosition _kLake = CameraPosition(
       bearing: 192.8334901395799,
       target: LatLng(37.43296265331129, -122.08832357078792),
@@ -225,37 +227,45 @@ class _NewAddressPageState extends State<NewAddressPage> {
                       ),
                     ),
                     const SizedBox(height: LayoutConstants.spacingMedium),
-                    Container(
-                      padding:
-                          const EdgeInsets.all(LayoutConstants.paddingLarge),
-                      alignment: Alignment.center,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 1,
-                          color: ColorPalette.greyScale300,
-                        ),
-                        borderRadius:
-                            BorderRadius.circular(LayoutConstants.radiusBig),
-                      ),
-                      child: Row(children: [
-                        SvgPicture.asset(IconsName.map_pin),
-                        const SizedBox(width: LayoutConstants.spacingSmall),
-                        const Expanded(
-                          child: Text(
-                            'Select pin point',
-                            textAlign: TextAlign.start,
-                            style: TextStyle(
-                                color: ColorPalette.primaryBase,
-                                fontStyle: FontStyle.normal,
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: 0.4,
-                                fontSize: FontsSize.medium,
-                                fontFamily: Fonts.medium),
+                    InkWell(
+                      borderRadius:
+                          BorderRadius.circular(LayoutConstants.radiusBig),
+                      onTap: () {
+                        Modular.to.pushNamed(AppRoute.pinaddress.path);
+                      },
+                      child: Container(
+                        padding:
+                            const EdgeInsets.all(LayoutConstants.paddingLarge),
+                        alignment: Alignment.center,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 1,
+                            color: ColorPalette.greyScale300,
                           ),
+                          borderRadius:
+                              BorderRadius.circular(LayoutConstants.radiusBig),
                         ),
-                        SvgPicture.asset(IconsName.chevronRight,
-                            color: ColorPalette.greyScale900)
-                      ]),
+                        child: Row(children: [
+                          SvgPicture.asset(IconsName.map_pin),
+                          const SizedBox(width: LayoutConstants.spacingSmall),
+                          const Expanded(
+                            child: Text(
+                              'Select pin point',
+                              textAlign: TextAlign.start,
+                              style: TextStyle(
+                                  color: ColorPalette.primaryBase,
+                                  fontStyle: FontStyle.normal,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 0.4,
+                                  fontSize: FontsSize.medium,
+                                  fontFamily: Fonts.medium),
+                            ),
+                          ),
+                          SvgPicture.asset(IconsName.chevronRight,
+                              // ignore: deprecated_member_use
+                              color: ColorPalette.greyScale900)
+                        ]),
+                      ),
                     ),
                     const SizedBox(height: LayoutConstants.spacingXLarge),
                     _map()
@@ -307,8 +317,8 @@ class _NewAddressPageState extends State<NewAddressPage> {
               bottom: 195, left: 15), // <--- padding added here
           zoomControlsEnabled: true,
           mapType: MapType.normal,
-          markers: this.myMarker(),
-          initialCameraPosition: CameraPosition(
+          markers: myMarker(),
+          initialCameraPosition: const CameraPosition(
             target: _mainLocation,
             zoom: 10.0,
           ),

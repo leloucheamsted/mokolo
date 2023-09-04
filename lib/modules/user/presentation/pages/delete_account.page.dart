@@ -28,102 +28,105 @@ class _DeleteAccountPageState extends State<DeleteAccountPage> {
           child: Column(
             children: [
               Expanded(
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const Text(
-                      'Why do you want to delete your account ?',
-                      style: TextStyle(
-                        color: ColorPalette.greyScale400,
-                        fontWeight: FontWeight.w500,
-                        letterSpacing: 0.1,
-                        fontFamily: Fonts.medium,
-                        fontSize: FontsSize.medium,
-                      ),
-                    ),
-                    const SizedBox(height: LayoutConstants.spacingSmall),
-                    Column(
-                      children: [
-                        _reasonItem('Personal reasons', true),
-                        _reasonItem('Difficult to use', false),
-                        _reasonItem('There’s a faster alternative', false),
-                        _reasonItem('There’s a cheaper alternative', false),
-                        _reasonItem('I have privacy concern', false),
-                        _reasonItem('Others', false),
-                      ],
-                    ),
-                    const SizedBox(height: LayoutConstants.spacingSmall),
-                    Container(
-                      height: 120,
-                      padding:
-                          const EdgeInsets.all(LayoutConstants.paddingLarge),
-                      alignment: Alignment.topLeft,
-                      decoration: BoxDecoration(
-                        border: Border.all(
-                          width: 1,
-                          color: ColorPalette.greyScale300,
+                child: SingleChildScrollView(
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Why do you want to delete your account ?',
+                        style: TextStyle(
+                          color: ColorPalette.greyScale400,
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: 0.1,
+                          fontFamily: Fonts.medium,
+                          fontSize: FontsSize.medium,
                         ),
-                        borderRadius: BorderRadius.circular(
-                            LayoutConstants.radiusLarge - 4),
                       ),
-                      child: TextFormField(
-                        minLines:
-                            null, // any number you need (It works as the rows for the textarea)
-                        keyboardType: TextInputType.multiline,
-                        maxLines: null,
-                        style: const TextStyle(
-                            color: ColorPalette.greyScale900,
-                            fontFamily: Fonts.medium,
-                            fontWeight: FontWeight.w500,
-                            fontSize: FontsSize.large,
-                            letterSpacing: 0.1),
-                        decoration: const InputDecoration.collapsed(
-                          hintText: 'Write a message',
-                          hintStyle: TextStyle(
-                              color: ColorPalette.greyScale300,
+                      const SizedBox(height: LayoutConstants.spacingSmall),
+                      Column(
+                        children: [
+                          _reasonItem('Personal reasons', true),
+                          _reasonItem('Difficult to use', false),
+                          _reasonItem('There’s a faster alternative', false),
+                          _reasonItem('There’s a cheaper alternative', false),
+                          _reasonItem('I have privacy concern', false),
+                          _reasonItem('Others', false),
+                        ],
+                      ),
+                      const SizedBox(height: LayoutConstants.spacingSmall),
+                      Container(
+                        height: 120,
+                        padding:
+                            const EdgeInsets.all(LayoutConstants.paddingLarge),
+                        alignment: Alignment.topLeft,
+                        decoration: BoxDecoration(
+                          border: Border.all(
+                            width: 1,
+                            color: ColorPalette.greyScale300,
+                          ),
+                          borderRadius: BorderRadius.circular(
+                              LayoutConstants.radiusLarge - 4),
+                        ),
+                        child: TextFormField(
+                          minLines:
+                              null, // any number you need (It works as the rows for the textarea)
+                          keyboardType: TextInputType.multiline,
+                          maxLines: null,
+                          style: const TextStyle(
+                              color: ColorPalette.greyScale900,
                               fontFamily: Fonts.medium,
                               fontWeight: FontWeight.w500,
                               fontSize: FontsSize.large,
                               letterSpacing: 0.1),
+                          decoration: const InputDecoration.collapsed(
+                            hintText: 'Write a message',
+                            hintStyle: TextStyle(
+                                color: ColorPalette.greyScale300,
+                                fontFamily: Fonts.medium,
+                                fontWeight: FontWeight.w500,
+                                fontSize: FontsSize.large,
+                                letterSpacing: 0.1),
+                          ),
                         ),
                       ),
-                    ),
-                    const SizedBox(height: LayoutConstants.spacingSmall),
-                    Container(
-                      padding:
-                          const EdgeInsets.all(LayoutConstants.paddingLarge),
-                      alignment: Alignment.topLeft,
-                      decoration: BoxDecoration(
-                        color: ColorPalette.secondaryBase.withOpacity(0.5),
-                        borderRadius: BorderRadius.circular(
-                            LayoutConstants.radiusLarge - 4),
-                      ),
-                      child: Row(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          SvgPicture.asset(
-                            IconsName.alert,
-                            // ignore: deprecated_member_use
-                            color: ColorPalette.secondaryBase,
-                          ),
-                          const SizedBox(width: LayoutConstants.spacingXsmall),
-                          const Expanded(
-                            child: Text(
-                              'Please note that you will permanently all your orders, addresses, payment methods and profile info. After this, there is no turning back.',
-                              style: TextStyle(
-                                color: ColorPalette.secondaryBase,
-                                fontWeight: FontWeight.w500,
-                                letterSpacing: 0.2,
-                                fontFamily: Fonts.medium,
-                                fontSize: FontsSize.small,
-                              ),
+                      const SizedBox(height: LayoutConstants.spacingSmall),
+                      Container(
+                        padding:
+                            const EdgeInsets.all(LayoutConstants.paddingLarge),
+                        alignment: Alignment.topLeft,
+                        decoration: BoxDecoration(
+                          color: ColorPalette.secondaryBase.withOpacity(0.5),
+                          borderRadius: BorderRadius.circular(
+                              LayoutConstants.radiusLarge - 4),
+                        ),
+                        child: Row(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            SvgPicture.asset(
+                              IconsName.alert,
+                              // ignore: deprecated_member_use
+                              color: ColorPalette.secondaryBase,
                             ),
-                          )
-                        ],
-                      ),
-                    )
-                  ],
+                            const SizedBox(
+                                width: LayoutConstants.spacingXsmall),
+                            const Expanded(
+                              child: Text(
+                                'Please note that you will permanently all your orders, addresses, payment methods and profile info. After this, there is no turning back.',
+                                style: TextStyle(
+                                  color: ColorPalette.secondaryBase,
+                                  fontWeight: FontWeight.w500,
+                                  letterSpacing: 0.2,
+                                  fontFamily: Fonts.medium,
+                                  fontSize: FontsSize.small,
+                                ),
+                              ),
+                            )
+                          ],
+                        ),
+                      )
+                    ],
+                  ),
                 ),
               ),
               Container(

@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:mokolo/modules/common/constants/constants.dart';
@@ -25,7 +24,7 @@ class CustomDropdown<T> extends StatefulWidget {
 
   /// if true the dropdown icon will as a leading icon, default to false
   final bool leadingIcon;
-  CustomDropdown({
+  const CustomDropdown({
     Key? key,
     this.hideIcon = false,
     this.child,
@@ -38,6 +37,7 @@ class CustomDropdown<T> extends StatefulWidget {
   }) : super(key: key);
 
   @override
+  // ignore: library_private_types_in_public_api
   _CustomDropdownState<T> createState() => _CustomDropdownState<T>();
 }
 
@@ -55,8 +55,8 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>>
   void initState() {
     super.initState();
 
-    _animationController =
-        AnimationController(vsync: this, duration: Duration(milliseconds: 200));
+    _animationController = AnimationController(
+        vsync: this, duration: const Duration(milliseconds: 200));
     _expandAnimation = CurvedAnimation(
       parent: _animationController,
       curve: Curves.easeInOut,
@@ -69,7 +69,6 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>>
 
   @override
   Widget build(BuildContext context) {
-    var style = widget.dropdownButtonStyle;
     // link the overlay to the button
     return CompositedTransformTarget(
       link: this._layerLink,
@@ -127,7 +126,7 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>>
         onTap: () => _toggleDropdown(close: true),
         behavior: HitTestBehavior.translucent,
         // full screen container to register taps anywhere and close drop down
-        child: Container(
+        child: SizedBox(
           height: MediaQuery.of(context).size.height,
           width: MediaQuery.of(context).size.width,
           child: Stack(
@@ -171,7 +170,7 @@ class _CustomDropdownState<T> extends State<CustomDropdown<T>>
                                   onTap: () {
                                     setState(() => _currentIndex = item.key);
                                     widget.onChange!(
-                                        item.value.value!, item.key);
+                                        item.value.value as T, item.key);
                                     _toggleDropdown();
                                   },
                                   child: item.value,

@@ -1,5 +1,6 @@
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:mokolo/modules/shipping/presentation/pages/new_address.page.dart';
+import 'package:mokolo/modules/shipping/presentation/pages/select_pin_point_page.dart';
 import 'package:mokolo/modules/shipping/presentation/pages/shipping.page.dart';
 import 'package:mokolo/modules/shipping/presentation/pages/shipping_address.page.dart';
 import 'package:mokolo/routes/app_routes.enum.dart';
@@ -20,6 +21,10 @@ class ShippingModule extends Module {
         ChildRoute(
           AppRoute.newaddress.pathAsChild,
           child: (context, args) => const NewAddressPage(),
+        ),
+        ChildRoute(
+          AppRoute.pinaddress.pathAsChild,
+          child: (context, args) => const SelectPinPointPage(),
         ),
       ];
 }

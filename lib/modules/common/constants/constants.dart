@@ -3,64 +3,65 @@ import 'package:flutter/services.dart';
 
 class Constants {
   static final theme = ThemeData(
-    brightness: Brightness.dark,
-    primaryColor: const Color.fromRGBO(255, 255, 255, 1),
-    fontFamily: 'clashDisplayRegular',
-    scaffoldBackgroundColor: const Color(0xfff),
-    dividerColor: ColorPalette.white,
-    dividerTheme: const DividerThemeData(
-      color: ColorPalette.white,
-      thickness: 1,
-    ),
-    inputDecorationTheme: const InputDecorationTheme(
-      contentPadding: EdgeInsets.all(12),
-      border: OutlineInputBorder(
-        borderSide: BorderSide.none,
+      brightness: Brightness.dark,
+      primaryColor: ColorPalette.white,
+      fontFamily: 'clashDisplayRegular',
+      scaffoldBackgroundColor: Colors.white,
+      dividerColor: ColorPalette.white,
+      dividerTheme: const DividerThemeData(
+        color: ColorPalette.white,
+        thickness: 1,
       ),
-    ),
-    appBarTheme: AppBarTheme(
-      elevation: 0,
-      backgroundColor: ColorPalette.white,
-      systemOverlayStyle: const SystemUiOverlayStyle(
-        statusBarColor: ColorPalette.white,
-        statusBarIconBrightness:
-            Brightness.dark, //<-- For Android SEE HERE (dark icons)
-        statusBarBrightness:
-            Brightness.light, //<-- For iOS SEE HERE (dark icons)
+      inputDecorationTheme: const InputDecorationTheme(
+        iconColor: ColorPalette.greyScale900,
+        contentPadding: EdgeInsets.all(12),
+        border: OutlineInputBorder(
+          borderSide: BorderSide.none,
+        ),
       ),
-      toolbarTextStyle: const TextTheme(
-        titleLarge: TextStyle(
-          color: Colors.white,
-          fontSize: 18.0,
-          fontWeight: FontWeight.w400,
+      appBarTheme: AppBarTheme(
+        elevation: 0,
+        backgroundColor: ColorPalette.white,
+        systemOverlayStyle: const SystemUiOverlayStyle(
+          statusBarColor: ColorPalette.white,
+          statusBarIconBrightness:
+              Brightness.dark, //<-- For Android SEE HERE (dark icons)
+          statusBarBrightness:
+              Brightness.light, //<-- For iOS SEE HERE (dark icons)
         ),
-      ).bodyMedium,
-      titleTextStyle: const TextTheme(
-        titleLarge: TextStyle(
-          color: Colors.white,
-          fontSize: 18.0,
-          fontWeight: FontWeight.w400,
-        ),
-      ).titleLarge,
-    ),
-    textSelectionTheme: const TextSelectionThemeData(
-      cursorColor: Colors.white,
-    ),
-    colorScheme: ColorScheme.fromSwatch()
-        .copyWith(
-          primary: ColorPalette.primaryBase,
-          secondary: ColorPalette.secondaryBase,
-          brightness: Brightness.dark,
-          surface: ColorPalette.mokoloBgColor,
-          onSurface: Colors.grey.shade300,
-        )
-        .copyWith(background: const Color.fromRGBO(255, 255, 255, 1)),
-  )
+        toolbarTextStyle: const TextTheme(
+          titleLarge: TextStyle(
+            color: Colors.white,
+            fontSize: 18.0,
+            fontWeight: FontWeight.w400,
+          ),
+        ).bodyMedium,
+        titleTextStyle: const TextTheme(
+          titleLarge: TextStyle(
+            color: ColorPalette.greyScale900,
+            fontSize: 18.0,
+            fontWeight: FontWeight.w400,
+          ),
+        ).titleLarge,
+      ),
+      textSelectionTheme: const TextSelectionThemeData(
+        cursorColor: ColorPalette.greyScale900,
+      ),
+      colorScheme: ColorScheme.fromSwatch().copyWith(
+        primary: ColorPalette.primaryBase,
+        secondary: ColorPalette.greyScale200,
+        brightness: Brightness.dark,
+        surface: ColorPalette.mokoloBgColor,
+        onSurface: ColorPalette.greyScale900,
+      )
+      //.copyWith(background: const Color.fromRGBO(255, 255, 255, 1)),
+      )
     ..textTheme.apply(
       bodyColor: ColorPalette.greyScale900,
       displayColor: ColorPalette.greyScale900,
       fontFamily: 'clasDisplayRegular',
     )
+
     // ..floatingActionButtonTheme.copyWith(
     //   backgroundColor: ColorPalette.greenStatutColor,
     // )
@@ -70,6 +71,7 @@ class Constants {
 }
 
 class ColorPalette {
+  // ignore: use_full_hex_values_for_flutter_colors
   static const Color mokoloBgColor = Color(0xfff);
   static const Color primaryBase = Color.fromRGBO(15, 23, 42, 1);
   static const Color primary400 = Color.fromRGBO(42, 54, 70, 1);
@@ -151,6 +153,8 @@ class TabList {
 }
 
 class ImagesName {
+  static const String shoppa = 'assets/images/shoppa.png';
+
   static const String mokolo = 'assets/images/mokolo.png';
   static const String photo = 'assets/images/photo.png';
   static const String mtn = 'assets/images/mtn.png';
@@ -167,6 +171,7 @@ class IconsName {
   static const String back = 'assets/icons/back.svg';
   static const String chevronDown = 'assets/icons/chevron-down.svg';
   static const String paymentsuccess = 'assets/icons/paymentsuccess.svg';
+  static const String currentlocation = 'assets/icons/current_location.svg';
 
   static const String user = 'assets/icons/user.svg';
   static const String message = 'assets/icons/message.svg';
